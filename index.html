@@ -32,40 +32,10 @@
 </head>
 
 <body>
-<script>
-	(function() {
-		var storageKey = 'lyazz-theme';
-		try {
-			var storedTheme = localStorage.getItem(storageKey);
-			var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-			var theme = storedTheme || (prefersDark ? 'dark' : 'light');
-			if (theme === 'light') {
-				document.body.classList.add('light');
-			}
-			document.body.dataset.theme = theme;
-		} catch (err) {
-			document.body.dataset.theme = 'dark';
-		}
-	})();
-</script>
 
 <div class="deebo_fn_main">
 			
 			
-	<!-- Light/Dark Switcher -->
-	<div class="deebo_fn_switcher_wrap">
-		<label>
-			<span class="light">Light</span>
-				<span class="checkbox_wrap">
-					<input type="checkbox" id="skin_switcher" checked>
-					<span class="slider round"></span>
-				</span>
-			<span class="dark">Dark</span>
-		</label>
-	</div>
-	<!-- /Light/Dark Switcher -->
-	
-	
 	<!-- Overlay -->
 	<div class="right_bar_overlay"></div>
 	<!--/ Overlay -->

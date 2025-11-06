@@ -10,22 +10,6 @@
 	<link rel="stylesheet" href="../../css/project.css" />
 </head>
 <body class="project-page">
-	<script>
-		(function() {
-			var storageKey = 'lyazz-theme';
-			try {
-				var storedTheme = localStorage.getItem(storageKey);
-				var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-				var theme = storedTheme || (prefersDark ? 'dark' : 'light');
-				if (theme === 'light') {
-					document.body.classList.add('light');
-				}
-				document.body.dataset.theme = theme;
-			} catch (err) {
-				document.body.dataset.theme = 'dark';
-			}
-		})();
-	</script>
 	<header class="project__hero">
 		<a class="project__back" href="../../index.html">← Back to portfolio</a>
 		<h1>Stock Management App</h1>

@@ -30,39 +30,6 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 			FrenifyDeebo.portfolioFilter();
 			FrenifyDeebo.magnific();
 			FrenifyDeebo.anchor();
-			FrenifyDeebo.darklight();
-		},
-		
-		darklight: function(){
-			var toggle = $('.deebo_fn_switcher_wrap input');
-			if(!toggle.length){ return; }
-			var storageKey = 'lyazz-theme';
-			var applyTheme = function(theme){
-				if(theme === 'light'){
-					$('body').addClass('light');
-				}else{
-					$('body').removeClass('light');
-					theme = 'dark';
-				}
-				$('body').attr('data-theme', theme);
-				try{
-					localStorage.setItem(storageKey, theme);
-				}catch(err){/* no-op */}
-				toggle.prop('checked', theme === 'dark');
-			};
-			var storedTheme = null;
-			try{
-				storedTheme = localStorage.getItem(storageKey);
-			}catch(err){
-				storedTheme = null;
-			}
-			if(storedTheme !== 'light' && storedTheme !== 'dark'){
-				storedTheme = $('body').hasClass('light') ? 'light' : 'dark';
-			}
-			applyTheme(storedTheme);
-			toggle.off('change').on('change', function(){
-				applyTheme(this.checked ? 'dark' : 'light');
-			});
 		},
 		
 		anchor: function(){
