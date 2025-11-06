@@ -267,6 +267,7 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 .deebo_fn__cv .cv__header .in{
 	background: linear-gradient(160deg, var(--surface-primary), rgba(27, 25, 45, 0.88));
 	min-height: 100%;
+	height: 100%;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -283,6 +284,7 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	padding: 36px 10%;
 	border-radius: 14px;
 	overflow: visible;
+	overflow-y: auto;
 	border: 1px solid var(--surface-border);
 	box-shadow: 0 32px 80px -48px var(--card-shadow);
 }
@@ -424,6 +426,9 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	-ms-align-items: center;
 	align-items: center;
 	margin-left: -5px;
+}
+.deebo_fn__cv .cv__header .social{
+	margin-top: auto;
 }
 .deebo_fn__cv .social li{
 	margin: 0;
@@ -586,8 +591,7 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	overflow: hidden;
 }
 .section_header .content{
-	padding-top: 200px;
-	padding-bottom: 200px;
+	padding: 40px 0;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -596,8 +600,7 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	-ms-align-items: center;
 	align-items: center;
 	justify-content: space-between;
-	min-height: 90vh;
-	min-height: calc(100vh - 160px); /* 50px spacing from top, 50px from bottom of the window & 30px from top, 30px from bottom of the section. Summary 160px */
+	height: clamp(360px, 60vh, 480px);
 }
 .section_header .left_hero_header{
 	width: 475px;
@@ -767,10 +770,12 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 }
 .section_header .cd-words-wrapper{
 	max-width: 100%;
+	min-height: 3.4em;
 }
 .section_header .cd-words-wrapper b{
 	white-space: normal !important;
-	word-break: break-word;
+	word-break: normal;
+	line-height: 1.2;
 }
 /*------------------------------------------------------------------*/
 /*	04) Main title
@@ -976,7 +981,7 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 }
 .projects__stories .fn_cs_boxed_list ul{
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-template-columns: minmax(0, 1fr);
 	gap: 32px;
 }
 .section_projects .fn_cs_boxed_list li{
@@ -1016,27 +1021,53 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 .project_card__media{
 	margin: 0;
 	position: relative;
-	overflow: hidden;
+	overflow: visible;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px;
 }
-.project_card__media:after{
+.project_card__device{
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	aspect-ratio: 16 / 10;
+	border-radius: 18px;
+	overflow: hidden;
+	background: radial-gradient(65% 65% at 50% 35%, rgba(143,118,251,0.25), rgba(5,4,10,0.8));
+	box-shadow: 0 28px 70px -50px rgba(5,4,10,0.95);
+	transition: box-shadow .35s ease, transform .35s ease;
+}
+.project_card__media[data-device="mobile"]{
+	padding: 18px 10px;
+}
+.project_card__media[data-device="mobile"] .project_card__device{
+	width: clamp(160px, 78%, 240px);
+	aspect-ratio: 9 / 16;
+	border-radius: 28px;
+}
+.project_card__media[data-device="desktop"] .project_card__device{
+	width: 100%;
+}
+.project_card__device:after{
 	content: '';
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(180deg, rgba(8, 7, 16, 0) 0%, rgba(8, 7, 16, 0.6) 100%);
+	background: linear-gradient(180deg, rgba(8, 7, 16, 0) 0%, rgba(8, 7, 16, 0.65) 100%);
 	opacity: 0;
 	transition: opacity .3s ease;
 }
-.project_card:hover .project_card__media:after{
+.project_card:hover .project_card__device:after{
 	opacity: 1;
 }
-.project_card__media img{
+.project_card__device img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	display: block;
 	transition: transform .35s ease;
 }
-.project_card:hover .project_card__media img{
+.project_card:hover .project_card__device img{
 	transform: scale(1.05);
 }
 .project_card__body{
@@ -2498,7 +2529,13 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 		grid-template-columns: minmax(0, 1fr);
 	}
 	.project_card__media{
-		max-height: 260px;
+		padding: 20px 18px;
+	}
+	.project_card__media[data-device="mobile"]{
+		padding: 26px 18px;
+	}
+	.project_card__media[data-device="mobile"] .project_card__device{
+		width: clamp(180px, 46vw, 280px);
 	}
 }
 @media(max-width: 1040px){
@@ -2617,7 +2654,13 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 		grid-template-columns: minmax(0, 1fr);
 	}
 	.project_card__media{
-		max-height: 220px;
+		padding: 18px 14px;
+	}
+	.project_card__media[data-device="mobile"]{
+		padding: 22px 14px;
+	}
+	.project_card__media[data-device="mobile"] .project_card__device{
+		width: clamp(160px, 62vw, 240px);
 	}
 	.project_card__body{
 		padding: 32px 26px;

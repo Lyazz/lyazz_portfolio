@@ -79,15 +79,36 @@
 
 		<section>
 			<h2>Gallery</h2>
-			<div class="project__gallery">
-				<figure>
-					<img src="../../img/portfolio/6.jpg" alt="Excel Invoicing Tool data table overview" />
-					<figcaption>Responsive dashboards combine filters, search, and weekly counters.</figcaption>
-				</figure>
-				<figure>
-					<img src="../../img/portfolio/5.jpg" alt="Excel Invoicing Tool tutorial coach marks" />
-					<figcaption>Guided onboarding highlights key actions for first-time operators.</figcaption>
-				</figure>
+			<div class="project__gallery" data-gallery>
+				<div class="project__gallery-track">
+					<figure>
+						<img src="../../img/projects/excel_invoicing_tool/dashboard.jpg" alt="Excel Invoicing Tool data dashboard" />
+						<figcaption>Dashboards blend filters, multi-sort tables, and real-time KPIs.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/excel_invoicing_tool/time-parser.jpg" alt="Excel Invoicing Tool time parser" />
+						<figcaption>Time parser ingests spreadsheets, normalizes activity codes, and validates hours.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/excel_invoicing_tool/coach-marks.jpg" alt="Excel Invoicing Tool coach marks" />
+						<figcaption>Coach marks highlight critical actions during the first-run experience.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/excel_invoicing_tool/theme-switcher.jpg" alt="Excel Invoicing Tool theme switcher" />
+						<figcaption>Theme switcher keeps internal branding intact across light and dark modes.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/excel_invoicing_tool/export-center.jpg" alt="Excel Invoicing Tool export center" />
+						<figcaption>Export center batches PDFs and XLSX summaries for finance approvals.</figcaption>
+					</figure>
+				</div>
+				<button class="project__gallery-nav project__gallery-nav--prev" type="button" data-gallery-prev aria-label="Previous screenshot">
+					<span aria-hidden="true">‹</span>
+				</button>
+				<button class="project__gallery-nav project__gallery-nav--next" type="button" data-gallery-next aria-label="Next screenshot">
+					<span aria-hidden="true">›</span>
+				</button>
+				<div class="project__gallery-dots" data-gallery-dots></div>
 			</div>
 		</section>
 
@@ -103,5 +124,6 @@
 	<footer class="project__footer">
 		<p>Have a similar project in mind? <a href="mailto:yazidaitallala@hotmail.com">Email Yazid</a> or connect on <a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noreferrer noopener">LinkedIn</a>.</p>
 	</footer>
+	<script src="../../js/project-gallery.js"></script>
 </body>
 </html>

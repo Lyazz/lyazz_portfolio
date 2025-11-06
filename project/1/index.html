@@ -66,15 +66,36 @@
 
 		<section>
 			<h2>Gallery</h2>
-			<div class="project__gallery">
-				<figure>
-					<img src="../../img/portfolio/1.jpg" alt="NexSync POS dashboard interface" />
-					<figcaption>Sales dashboard consolidates metrics across stores.</figcaption>
-				</figure>
-				<figure>
-					<img src="../../img/portfolio/2.jpg" alt="NexSync POS mobile checkout flow" />
-					<figcaption>Responsive checkout optimized for tablet operators.</figcaption>
-				</figure>
+			<div class="project__gallery" data-gallery>
+				<div class="project__gallery-track">
+					<figure>
+						<img src="../../img/projects/nexsync_pos/analytics-dashboard.jpg" alt="NexSync POS executive analytics panel" />
+						<figcaption>Unified analytics view surfaces conversion, sales, and margin insights.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/nexsync_pos/inventory-forecast.jpg" alt="NexSync POS predictive inventory chart" />
+						<figcaption>AI forecasting flags low stock SKUs and recommended reorder points.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/nexsync_pos/tablet-checkout.jpg" alt="NexSync POS tablet checkout flow" />
+						<figcaption>Tablet checkout keeps cashiers aligned even when offline syncing is pending.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/nexsync_pos/staff-console.jpg" alt="NexSync POS staff management console" />
+						<figcaption>Role-based console manages staff access, shift swaps, and real-time KPIs.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/nexsync_pos/reporting-suite.jpg" alt="NexSync POS reporting suite" />
+						<figcaption>Export-ready summaries highlight taxes, tenders, payouts, and audit notes.</figcaption>
+					</figure>
+				</div>
+				<button class="project__gallery-nav project__gallery-nav--prev" type="button" data-gallery-prev aria-label="Previous screenshot">
+					<span aria-hidden="true">‹</span>
+				</button>
+				<button class="project__gallery-nav project__gallery-nav--next" type="button" data-gallery-next aria-label="Next screenshot">
+					<span aria-hidden="true">›</span>
+				</button>
+				<div class="project__gallery-dots" data-gallery-dots></div>
 			</div>
 		</section>
 
@@ -99,5 +120,6 @@
 	<footer class="project__footer">
 		<p>Have a similar project in mind? <a href="mailto:yazidaitallala@hotmail.com">Email Yazid</a> or connect on <a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noreferrer noopener">LinkedIn</a>.</p>
 	</footer>
+	<script src="../../js/project-gallery.js"></script>
 </body>
 </html>

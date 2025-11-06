@@ -79,15 +79,36 @@
 
 		<section>
 			<h2>Gallery</h2>
-			<div class="project__gallery">
-				<figure>
-					<img src="../../img/portfolio/5.jpg" alt="SMS Forwarder whitelisted sender interface" />
-					<figcaption>Whitelist management keeps forwarding under tight control.</figcaption>
-				</figure>
-				<figure>
-					<img src="../../img/portfolio/6.jpg" alt="SMS Forwarder analytics on mobile dashboard" />
-					<figcaption>Dashboard summaries show real-time forwarding health and delivery history.</figcaption>
-				</figure>
+			<div class="project__gallery" data-gallery>
+				<div class="project__gallery-track">
+					<figure>
+						<img src="../../img/projects/sms_forwarder/whitelist.jpg" alt="SMS Forwarder whitelist management mockup" />
+						<figcaption>Admins curate trusted senders and escalation channels in one view.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/sms_forwarder/delivery-health.jpg" alt="SMS Forwarder delivery health dashboard" />
+						<figcaption>Delivery health widget surfaces outages, retries, and carrier latency.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/sms_forwarder/automation-rules.jpg" alt="SMS Forwarder automation rules" />
+						<figcaption>Granular automation rules filter, transform, and forward mission-critical alerts.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/sms_forwarder/audit-trail.jpg" alt="SMS Forwarder audit trail view" />
+						<figcaption>End-to-end audit trail retains encrypted payloads for compliance reviews.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/sms_forwarder/insights.jpg" alt="SMS Forwarder insights report" />
+						<figcaption>Volume insights expose spikes by sender, tower, and severity for ops teams.</figcaption>
+					</figure>
+				</div>
+				<button class="project__gallery-nav project__gallery-nav--prev" type="button" data-gallery-prev aria-label="Previous screenshot">
+					<span aria-hidden="true">‹</span>
+				</button>
+				<button class="project__gallery-nav project__gallery-nav--next" type="button" data-gallery-next aria-label="Next screenshot">
+					<span aria-hidden="true">›</span>
+				</button>
+				<div class="project__gallery-dots" data-gallery-dots></div>
 			</div>
 		</section>
 
@@ -103,5 +124,6 @@
 	<footer class="project__footer">
 		<p>Have a similar project in mind? <a href="mailto:yazidaitallala@hotmail.com">Email Yazid</a> or connect on <a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noreferrer noopener">LinkedIn</a>.</p>
 	</footer>
+	<script src="../../js/project-gallery.js"></script>
 </body>
 </html>

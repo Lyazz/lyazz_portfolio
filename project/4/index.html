@@ -67,15 +67,36 @@
 
 		<section>
 			<h2>Gallery</h2>
-			<div class="project__gallery">
-				<figure>
-					<img src="../../img/portfolio/2.jpg" alt="QueueMaster lobby display" />
-					<figcaption>Dynamic signage guiding visitors to the next available counter.</figcaption>
-				</figure>
-				<figure>
-					<img src="../../img/portfolio/1.jpg" alt="QueueMaster remote hardware prototype" />
-					<figcaption>Custom BLE remote with tactile controls and service indicators.</figcaption>
-				</figure>
+			<div class="project__gallery" data-gallery>
+				<div class="project__gallery-track">
+					<figure>
+						<img src="../../img/projects/queuemaster/lobby-display.jpg" alt="QueueMaster lobby display mockup" />
+						<figcaption>Dynamic signage guides visitors to the next available counter and channel.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/queuemaster/remote-controller.jpg" alt="QueueMaster BLE remote controller" />
+						<figcaption>BLE remote triggers ticket calls with tactile confirmation and LED feedback.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/queuemaster/iot-stack.jpg" alt="QueueMaster IoT stack diagram" />
+						<figcaption>IoT stack synchronizes BLE devices, displays, and cloud services via Firebase.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/queuemaster/mobile-ops.jpg" alt="QueueMaster mobile operations console" />
+						<figcaption>Supervisors reprioritize lanes, broadcast alerts, and monitor SLAs from mobile.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/queuemaster/analytics.jpg" alt="QueueMaster analytics heatmap" />
+						<figcaption>Analytics heatmaps surface peak hours, dwell times, and staffing needs.</figcaption>
+					</figure>
+				</div>
+				<button class="project__gallery-nav project__gallery-nav--prev" type="button" data-gallery-prev aria-label="Previous screenshot">
+					<span aria-hidden="true">‹</span>
+				</button>
+				<button class="project__gallery-nav project__gallery-nav--next" type="button" data-gallery-next aria-label="Next screenshot">
+					<span aria-hidden="true">›</span>
+				</button>
+				<div class="project__gallery-dots" data-gallery-dots></div>
 			</div>
 		</section>
 
@@ -101,5 +122,6 @@
 	<footer class="project__footer">
 		<p>Interested in smart infrastructure projects? <a href="mailto:yazidaitallala@hotmail.com">Email Yazid</a> or connect on <a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noreferrer noopener">LinkedIn</a>.</p>
 	</footer>
+	<script src="../../js/project-gallery.js"></script>
 </body>
 </html>

@@ -66,15 +66,36 @@
 
 		<section>
 			<h2>Gallery</h2>
-			<div class="project__gallery">
-				<figure>
-					<img src="../../img/portfolio/3.jpg" alt="Matima large format home screen" />
-					<figcaption>Home screen featuring oversized buttons for priority contacts.</figcaption>
-				</figure>
-				<figure>
-					<img src="../../img/portfolio/5.jpg" alt="Matima medication reminder flow" />
-					<figcaption>Reminders include spoken guidance and simple acknowledgement actions.</figcaption>
-				</figure>
+			<div class="project__gallery" data-gallery>
+				<div class="project__gallery-track">
+					<figure>
+						<img src="../../img/projects/matima_app/home-access.jpg" alt="Matima App priority contact hub" />
+						<figcaption>Home hub pins priority contacts with high-contrast tiles and large typography.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/matima_app/reminder-flow.jpg" alt="Matima App medication reminder flow" />
+						<figcaption>Medication reminders pair spoken cues with oversized confirmation buttons.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/matima_app/caregiver-portal.jpg" alt="Matima App caregiver management portal" />
+						<figcaption>Caregivers configure routines, monitor adherence, and send encouragement remotely.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/matima_app/voice-companion.jpg" alt="Matima App voice companion view" />
+						<figcaption>Voice companion reads menus aloud and accepts simple verbal responses for hands-free use.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/matima_app/setup-wizard.jpg" alt="Matima App setup wizard" />
+						<figcaption>Guided wizard personalizes fonts, contacts, and smart home integrations in minutes.</figcaption>
+					</figure>
+				</div>
+				<button class="project__gallery-nav project__gallery-nav--prev" type="button" data-gallery-prev aria-label="Previous screenshot">
+					<span aria-hidden="true">‹</span>
+				</button>
+				<button class="project__gallery-nav project__gallery-nav--next" type="button" data-gallery-next aria-label="Next screenshot">
+					<span aria-hidden="true">›</span>
+				</button>
+				<div class="project__gallery-dots" data-gallery-dots></div>
 			</div>
 		</section>
 
@@ -100,5 +121,6 @@
 	<footer class="project__footer">
 		<p>Let’s build inclusive mobile experiences together — <a href="mailto:yazidaitallala@hotmail.com">email Yazid</a> or connect on <a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noreferrer noopener">LinkedIn</a>.</p>
 	</footer>
+	<script src="../../js/project-gallery.js"></script>
 </body>
 </html>

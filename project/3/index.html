@@ -67,15 +67,36 @@
 
 		<section>
 			<h2>Gallery</h2>
-			<div class="project__gallery">
-				<figure>
-					<img src="../../img/portfolio/4.jpg" alt="Warehouse inventory dashboard" />
-					<figcaption>Dashboard aligning warehouse capacity with shipment demand.</figcaption>
-				</figure>
-				<figure>
-					<img src="../../img/portfolio/6.jpg" alt="Delivery tracking map" />
-					<figcaption>Mobile app integrates GPS routes and delivery confirmations.</figcaption>
-				</figure>
+			<div class="project__gallery" data-gallery>
+				<div class="project__gallery-track">
+					<figure>
+						<img src="../../img/projects/stock_management_app/warehouse-dashboard.jpg" alt="Stock Management App warehouse dashboard" />
+						<figcaption>Capacity, utilization, and spoilage metrics stay synchronized for every facility.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/stock_management_app/fleet-tracking.jpg" alt="Stock Management App fleet tracking map" />
+						<figcaption>Live truck tracking overlays ETAs, route compliance, and temperature telemetry.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/stock_management_app/scan-station.jpg" alt="Stock Management App barcode scan station" />
+						<figcaption>Barcode workflows reconcile receipts, picking, and dispatch without double entry.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/stock_management_app/order-orchestration.jpg" alt="Stock Management App order orchestration board" />
+						<figcaption>Order orchestration board highlights transfers, replenishment, and bottlenecks.</figcaption>
+					</figure>
+					<figure>
+						<img src="../../img/projects/stock_management_app/report-hub.jpg" alt="Stock Management App reporting hub" />
+						<figcaption>Reporting hub exports PDF packs and Excel workbooks for finance and ops teams.</figcaption>
+					</figure>
+				</div>
+				<button class="project__gallery-nav project__gallery-nav--prev" type="button" data-gallery-prev aria-label="Previous screenshot">
+					<span aria-hidden="true">‹</span>
+				</button>
+				<button class="project__gallery-nav project__gallery-nav--next" type="button" data-gallery-next aria-label="Next screenshot">
+					<span aria-hidden="true">›</span>
+				</button>
+				<div class="project__gallery-dots" data-gallery-dots></div>
 			</div>
 		</section>
 
@@ -101,5 +122,6 @@
 	<footer class="project__footer">
 		<p>Need a logistics platform tailored to your supply chain? <a href="mailto:yazidaitallala@hotmail.com">Email Yazid</a> or connect on <a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noreferrer noopener">LinkedIn</a>.</p>
 	</footer>
+	<script src="../../js/project-gallery.js"></script>
 </body>
 </html>
