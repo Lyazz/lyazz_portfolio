@@ -24,9 +24,16 @@
 	box-sizing: border-box;
 }
 
+html{
+	min-height: 100%;
+	background-color: #05040a;
+	overflow-x: hidden;
+}
+
 body.project-page{
 	margin: 0;
 	min-height: 100vh;
+	background-color: #05040a;
 	background:
 		radial-gradient(120% 120% at 0% 0%, rgba(167, 139, 250, 0.24), rgba(5, 4, 10, 0)),
 		radial-gradient(160% 160% at 100% 0%, rgba(230, 149, 122, 0.16), rgba(5, 4, 10, 0)),
@@ -37,30 +44,7 @@ body.project-page{
 	position: relative;
 	overflow-x: hidden;
 	padding-bottom: 32px;
-}
-
-body.project-page.light{
-	--project-bg: linear-gradient(180deg, #f9faff 0%, #eef1fb 100%);
-	--project-panel: rgba(255, 255, 255, 0.96);
-	--project-panel-alt: rgba(240, 241, 255, 0.92);
-	--project-surface: rgba(255, 255, 255, 0.94);
-	--project-surface-alt: rgba(243, 245, 255, 0.9);
-	--project-text: #1f1d33;
-	--project-muted: #585470;
-	--project-border: rgba(167, 139, 250, 0.24);
-	--project-alt-border: rgba(31, 38, 89, 0.08);
-	--project-shadow: rgba(46, 59, 108, 0.18);
-	--project-chip-bg: linear-gradient(135deg, rgba(255,255,255,0.86), rgba(230,229,255,0.7));
-	--project-link: #5748cc;
-	--project-link-hover: #241f72;
-	--project-link-glow: rgba(143, 118, 251, 0.35);
-	--project-glow-primary: rgba(143, 118, 251, 0.25);
-	--project-glow-secondary: rgba(230, 149, 122, 0.18);
-	background:
-		radial-gradient(120% 120% at 0% 0%, rgba(143, 118, 251, 0.18), rgba(247, 249, 252, 0)),
-		radial-gradient(160% 160% at 100% 0%, rgba(230, 149, 122, 0.12), rgba(247, 249, 252, 0)),
-		var(--project-bg);
-	color: var(--project-text);
+	overscroll-behavior: contain;
 }
 
 a{
@@ -429,10 +413,6 @@ a:hover{
 	color: var(--project-link-hover);
 }
 
-body.project-page.light .project__content section:before{
-	border-color: rgba(31, 38, 89, 0.08);
-}
-
 @media (max-width: 1024px){
 	.project__hero{
 		padding: 80px 40px 48px;
@@ -522,12 +502,17 @@ body.project-page.light .project__content section:before{
 	}
 }
 
+@media (max-width: 600px){
+	.project__gallery-track{
+		grid-template-columns: 1fr;
+	}
+}
+
 @media (max-width: 520px){
 	.project__hero{
 		padding: 56px 20px 36px;
 		margin: 24px 14px 0;
 	}
-
 	.project__hero h1{
 		font-size: 34px;
 	}
