@@ -186,39 +186,29 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 		contactForm: function(){
 			var sendButton = $('#send_message');
 			if(!sendButton.length){ return; }
-			sendButton.on('click', function(){
+			sendButton.on('click', function(e){
+				e.preventDefault();
 				var form		= $('.section_contact .contact_form');
-				var name 		= $("#name").val();
-				var email 		= $("#email").val();
-				var message 	= $("#message").val();
+				var name 		= $("#name").val().trim();
+				var subject 	= $("#subject").val().trim();
+				var message 	= $("#message").val().trim();
 				var spanSuccess	= form.find(".success");
 				var success     = spanSuccess.data('success');
 				var emailto     = form.data('email');
 
 				spanSuccess.empty();
-				if(name === ''|| email === ''|| message === '' || emailto === ''){
+				if(name === ''|| subject === ''|| message === '' || !emailto){
 					$('.empty_notice').slideDown(500).delay(2000).slideUp(500);
+					return false;
 				}
-				else{
-					$.post(
-						"modal/contact.php",
-						{
-							ajax_name: 		name,
-							ajax_email: 	email,
-							ajax_emailto: 	emailto,
-							ajax_message: 	message
-						}, function(data) {
-							spanSuccess.append(data);
-							if(spanSuccess.find(".contact_error").length){
-								spanSuccess.slideDown(500).delay(2000).slideUp(500);		
-							}else{
-								spanSuccess.append("<span class='contact_success'>" + success + "</span>");
-								spanSuccess.slideDown(500).delay(4000).slideUp(500);
-							}
-							if(data === ''){ form[0].reset();}
-						}
-					);
-				}
+
+				var bodyLines	= ["From: " + name, "", message].join("\n");
+				var mailtoHref	= "mailto:" + emailto + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(bodyLines);
+				window.location.href = mailtoHref;
+
+				spanSuccess.append("<span class='contact_success'>" + success + "</span>");
+				spanSuccess.slideDown(500).delay(4000).slideUp(500);
+				if(form.length){ form[0].reset(); }
 				return false; 
 			});
 		},
