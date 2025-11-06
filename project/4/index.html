@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>QueueMaster | Yazid AITALLALA</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="../../css/project.css" />
+</head>
+<body class="project-page">
+	<script>
+		(function() {
+			var storageKey = 'lyazz-theme';
+			try {
+				var storedTheme = localStorage.getItem(storageKey);
+				var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+				var theme = storedTheme || (prefersDark ? 'dark' : 'light');
+				if (theme === 'light') {
+					document.body.classList.add('light');
+				}
+				document.body.dataset.theme = theme;
+			} catch (err) {
+				document.body.dataset.theme = 'dark';
+			}
+		})();
+	</script>
+	<header class="project__hero">
+		<a class="project__back" href="../../index.html">← Back to portfolio</a>
+		<h1>QueueMaster</h1>
+		<p class="project__subtitle">An IoT-enabled queue management ecosystem synchronizing mobile apps, desk displays, and custom hardware remotes.</p>
+		<ul class="project__meta">
+			<li><strong>Role:</strong> Lead IoT &amp; Software Engineer</li>
+			<li><strong>Platform:</strong> Flutter mobile, Android remote, BLE hardware</li>
+			<li><strong>Timeline:</strong> 2020 — 2022</li>
+		</ul>
+	</header>
+
+	<main class="project__content">
+		<section>
+			<h2>Overview</h2>
+			<p>QueueMaster orchestrates patient and customer flow for hospitals and service centers. Flutter apps connect with BLE-powered remote controllers and wall displays, ensuring every station stays in sync. Administrators configure queue logic from the cloud while on-site staff manage calls with custom hardware that fits existing workflows.</p>
+		</section>
+
+		<section>
+			<h2>Key Features</h2>
+			<ul>
+				<li>BLE remote controls with custom PCBs and 3D-printed housings for staff counters.</li>
+				<li>Real-time updates between displays, kiosks, and mobile devices via WebSockets.</li>
+				<li>Firebase Realtime Database stores queue states and analytics.</li>
+				<li>Multi-queue support with priority routing for critical departments.</li>
+				<li>Analytics dashboard highlighting peak hours and service-level performance.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Tech Stack</h2>
+			<ul>
+				<li>Flutter, Dart, and Provider for mobile clients.</li>
+				<li>Bluetooth Low Energy modules with Arduino firmware.</li>
+				<li>Firebase Realtime Database, Cloud Functions, and WebSockets.</li>
+				<li>3D modeling in AutoCAD and 3D printing for enclosure prototyping.</li>
+				<li>Android SDK for dedicated remote control applications.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Gallery</h2>
+			<div class="project__gallery">
+				<figure>
+					<img src="../../img/portfolio/2.jpg" alt="QueueMaster lobby display" />
+					<figcaption>Dynamic signage guiding visitors to the next available counter.</figcaption>
+				</figure>
+				<figure>
+					<img src="../../img/portfolio/1.jpg" alt="QueueMaster remote hardware prototype" />
+					<figcaption>Custom BLE remote with tactile controls and service indicators.</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<section>
+			<h2>Outcomes</h2>
+			<ul>
+				<li>Shortened average wait times by 25% across pilot clinics.</li>
+				<li>Delivered a modular hardware-software stack adaptable to new service counters.</li>
+				<li>Provided administrators with actionable analytics to optimize staffing.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Links</h2>
+			<ul class="project__links">
+				<li><span>Pilot Deployments:</span> Hospitals in Algiers &amp; Béjaia</li>
+				<li><span>GitHub:</span> Hardware schematics available for partners</li>
+				<li><a href="mailto:yazidaitallala@hotmail.com?subject=QueueMaster%20Partnership">Start a QueueMaster pilot</a></li>
+			</ul>
+		</section>
+	</main>
+
+	<footer class="project__footer">
+		<p>Interested in smart infrastructure projects? <a href="mailto:yazidaitallala@hotmail.com">Email Yazid</a> or connect on <a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noreferrer noopener">LinkedIn</a>.</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Stock Management App | Yazid AITALLALA</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="../../css/project.css" />
+</head>
+<body class="project-page">
+	<script>
+		(function() {
+			var storageKey = 'lyazz-theme';
+			try {
+				var storedTheme = localStorage.getItem(storageKey);
+				var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+				var theme = storedTheme || (prefersDark ? 'dark' : 'light');
+				if (theme === 'light') {
+					document.body.classList.add('light');
+				}
+				document.body.dataset.theme = theme;
+			} catch (err) {
+				document.body.dataset.theme = 'dark';
+			}
+		})();
+	</script>
+	<header class="project__hero">
+		<a class="project__back" href="../../index.html">← Back to portfolio</a>
+		<h1>Stock Management App</h1>
+		<p class="project__subtitle">An end-to-end logistics platform orchestrating production, warehousing, and distribution for a dairy manufacturer.</p>
+		<ul class="project__meta">
+			<li><strong>Role:</strong> Full-Stack Developer</li>
+			<li><strong>Platform:</strong> Android, Web Dashboard</li>
+			<li><strong>Timeline:</strong> 2021</li>
+		</ul>
+	</header>
+
+	<main class="project__content">
+		<section>
+			<h2>Overview</h2>
+			<p>The Stock Management App connects factory output with warehouse inventory and delivery fleets. Android field apps digitize stock intake and dispatch, while a responsive web dashboard gives managers real-time oversight of orders, routes, and invoicing. Automated PDF generation and barcode scans replaced paper-heavy workflows.</p>
+		</section>
+
+		<section>
+			<h2>Key Features</h2>
+			<ul>
+				<li>Barcode and QR scanning for quick product identification and batch tracking.</li>
+				<li>GPS-enabled delivery routing with Google Maps API integration.</li>
+				<li>Role-based dashboards for production, logistics, and administration teams.</li>
+				<li>Automated PDF invoices, delivery notes, and quality audits.</li>
+				<li>REST API powering data sync between Android clients and the web portal.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Tech Stack</h2>
+			<ul>
+				<li>Java, Android SDK, Retrofit, and custom barcode modules.</li>
+				<li>CodeIgniter, PHP, and MySQL for backend services.</li>
+				<li>Responsive web dashboard using HTML, CSS, Bootstrap, and jQuery.</li>
+				<li>Google Maps Platform for fleet visualization and geofencing.</li>
+				<li>PDF generation, Excel export, and reporting pipelines.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Gallery</h2>
+			<div class="project__gallery">
+				<figure>
+					<img src="../../img/portfolio/4.jpg" alt="Warehouse inventory dashboard" />
+					<figcaption>Dashboard aligning warehouse capacity with shipment demand.</figcaption>
+				</figure>
+				<figure>
+					<img src="../../img/portfolio/6.jpg" alt="Delivery tracking map" />
+					<figcaption>Mobile app integrates GPS routes and delivery confirmations.</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<section>
+			<h2>Outcomes</h2>
+			<ul>
+				<li>Cut manual data entry time by 60% through barcode automation.</li>
+				<li>Provided management with live inventory visibility, reducing spoilage incidents.</li>
+				<li>Standardized delivery documentation via on-device PDF generation.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Links</h2>
+			<ul class="project__links">
+				<li><span>Admin Portal:</span> Deployed on client infrastructure</li>
+				<li><span>GitHub:</span> Private enterprise repository</li>
+				<li><a href="mailto:yazidaitallala@hotmail.com?subject=Stock%20Management%20Platform">Discuss a similar solution</a></li>
+			</ul>
+		</section>
+	</main>
+
+	<footer class="project__footer">
+		<p>Need a logistics platform tailored to your supply chain? <a href="mailto:yazidaitallala@hotmail.com">Email Yazid</a> or connect on <a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noreferrer noopener">LinkedIn</a>.</p>
+	</footer>
+</body>
+</html>

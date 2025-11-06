@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Matima App | Yazid AITALLALA</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="../../css/project.css" />
+</head>
+<body class="project-page">
+	<script>
+		(function() {
+			var storageKey = 'lyazz-theme';
+			try {
+				var storedTheme = localStorage.getItem(storageKey);
+				var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+				var theme = storedTheme || (prefersDark ? 'dark' : 'light');
+				if (theme === 'light') {
+					document.body.classList.add('light');
+				}
+				document.body.dataset.theme = theme;
+			} catch (err) {
+				document.body.dataset.theme = 'dark';
+			}
+		})();
+	</script>
+	<header class="project__hero">
+		<a class="project__back" href="../../index.html">← Back to portfolio</a>
+		<h1>Matima App</h1>
+		<p class="project__subtitle">A simplified smartphone experience that helps seniors stay connected, independent, and on schedule.</p>
+		<ul class="project__meta">
+			<li><strong>Role:</strong> Product Designer &amp; Flutter Developer</li>
+			<li><strong>Platform:</strong> Android (tablet &amp; phone)</li>
+			<li><strong>Timeline:</strong> 2022 — 2023</li>
+		</ul>
+	</header>
+
+	<main class="project__content">
+		<section>
+			<h2>Overview</h2>
+			<p>Matima reimagines the smartphone interface for elderly users. Larger touch targets, high-contrast typography, and clear voice feedback make it easy to place calls, find contacts, and follow medication plans. Caregivers can manage reminders remotely, ensuring the experience stays supportive without being intrusive.</p>
+		</section>
+
+		<section>
+			<h2>Key Features</h2>
+			<ul>
+				<li>Home screen with customizable quick actions for calls, video chats, and safety alerts.</li>
+				<li>Medication reminders with text-to-speech confirmations and snooze controls.</li>
+				<li>Emergency contact carousel that can be reached in two taps.</li>
+				<li>Remote configuration portal for relatives or medical staff.</li>
+				<li>Accessibility-first color palette and typography tested with real users.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Tech Stack</h2>
+			<ul>
+				<li>Flutter, Dart, Provider state management.</li>
+				<li>Text-to-Speech APIs (Google TTS) for audible prompts.</li>
+				<li>Firebase Authentication and Firestore for caregiver management.</li>
+				<li>Custom animations optimized for low-end devices.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Gallery</h2>
+			<div class="project__gallery">
+				<figure>
+					<img src="../../img/portfolio/3.jpg" alt="Matima large format home screen" />
+					<figcaption>Home screen featuring oversized buttons for priority contacts.</figcaption>
+				</figure>
+				<figure>
+					<img src="../../img/portfolio/5.jpg" alt="Matima medication reminder flow" />
+					<figcaption>Reminders include spoken guidance and simple acknowledgement actions.</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<section>
+			<h2>Outcomes</h2>
+			<ul>
+				<li>Achieved a 95% task completion rate during accessibility testing sessions.</li>
+				<li>Reduced missed medication reminders by delivering proactive follow-ups.</li>
+				<li>Enabled families to configure support remotely without needing physical access to the device.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Links</h2>
+			<ul class="project__links">
+				<li><span>Google Play:</span> Closed beta (available on request)</li>
+				<li><span>GitHub:</span> Private Flutter repository (access granted to partners)</li>
+				<li><a href="mailto:yazidaitallala@hotmail.com?subject=Matima%20App%20Information">Contact for partnership</a></li>
+			</ul>
+		</section>
+	</main>
+
+	<footer class="project__footer">
+		<p>Let’s build inclusive mobile experiences together — <a href="mailto:yazidaitallala@hotmail.com">email Yazid</a> or connect on <a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noreferrer noopener">LinkedIn</a>.</p>
+	</footer>
+</body>
+</html>
