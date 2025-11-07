@@ -2221,6 +2221,10 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 		right: 10px;
 		bottom: 10px;
 		top: 10px;
+		width: 100%;
+		max-width: 100%;
+		margin: 0 auto;
+		box-sizing: border-box;
 	}
 	.deebo_fn__cv .cv__header{
 		top: 10px;
