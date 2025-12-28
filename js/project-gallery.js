@@ -60,6 +60,12 @@
 				this.nextHandler = () => this.goTo(this.index + 1);
 				this.nextBtn.addEventListener('click', this.nextHandler);
 			}
+
+			this.resizeHandler = () => this.update();
+			window.addEventListener('resize', this.resizeHandler);
+
+			this.scrollHandler = () => this.syncIndexFromScroll();
+			this.track.addEventListener('scroll', this.scrollHandler, { passive: true });
 		}
 
 		goTo(targetIndex) {
@@ -78,13 +84,23 @@
 		}
 
 		update() {
-			const offset = -this.index * 100;
-			this.track.style.transform = `translate3d(${offset}%, 0, 0)`;
+			const slideWidth = this.root.clientWidth;
+			const offset = this.index * slideWidth;
+			this.track.style.transform = '';
+			if (typeof this.track.scrollTo === 'function') {
+				this.track.scrollTo({ left: offset, behavior: 'smooth' });
+			} else {
+				this.track.scrollLeft = offset;
+			}
 
 			this.slides.forEach((slide, idx) => {
 				const isActive = idx === this.index;
 				slide.setAttribute('aria-hidden', String(!isActive));
-				slide.toggleAttribute('data-active', isActive);
+				if (isActive) {
+					slide.setAttribute('data-active', '');
+				} else {
+					slide.removeAttribute('data-active');
+				}
 			});
 
 			if (this.dots) {
@@ -96,6 +112,38 @@
 					}
 				});
 			}
+		}
+
+		syncIndexFromScroll() {
+			const slideWidth = this.root.clientWidth;
+			if (!slideWidth) {
+				return;
+			}
+			const nextIndex = Math.round(this.track.scrollLeft / slideWidth);
+			if (nextIndex === this.index) {
+				return;
+			}
+			this.index = nextIndex;
+
+			if (this.dots) {
+				this.dots.forEach((dot, idx) => {
+					if (idx === this.index) {
+						dot.setAttribute('aria-current', 'true');
+					} else {
+						dot.removeAttribute('aria-current');
+					}
+				});
+			}
+
+			this.slides.forEach((slide, idx) => {
+				const isActive = idx === this.index;
+				slide.setAttribute('aria-hidden', String(!isActive));
+				if (isActive) {
+					slide.setAttribute('data-active', '');
+				} else {
+					slide.removeAttribute('data-active');
+				}
+			});
 		}
 
 		toggleNav(enabled) {

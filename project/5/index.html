@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>SMS Forwarder | Yazid AITALLALA</title>
+	<title>Nokhba Store | Yazid AITALLALA</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,52 +12,76 @@
 <body class="project-page">
 	<header class="project__hero">
 		<a class="project__back" href="../../index.html">← Back to portfolio</a>
-		<h1>SMS Forwarder</h1>
-		<p class="project__subtitle">Mobile tool that monitors inbound SMS and forwards only whitelisted senders to trusted recipients with full audit trails.</p>
+		<h1>Nokhba Store</h1>
+		<p class="project__subtitle">Vue 3 + Vite ecommerce ecosystem for مكتبة النخبة with a public storefront, protected admin panel, and Supabase-backed APIs.</p>
 		<ul class="project__meta">
-			<li><strong>Role:</strong> Lead Flutter Engineer</li>
-			<li><strong>Platform:</strong> Android (background services)</li>
-			<li><strong>Timeline:</strong> 2022 — Present</li>
+			<li><strong>Role:</strong> Full-Stack Web Engineer</li>
+			<li><strong>Platform:</strong> Web storefront + admin panel</li>
+			<li><strong>Timeline:</strong> 2023 — Present</li>
 		</ul>
 	</header>
 
 	<main class="project__content">
 		<section>
 			<h2>Overview</h2>
-			<p>The SMS Forwarder keeps mission-critical alerts from being buried in busy inboxes. It watches incoming Android messages, checks them against a curated whitelist, and relays the content to authorised numbers and dashboards. Operations teams receive the intelligence they need in real time while compliance teams can audit every forwarded message.</p>
+			<p>Nokhba Store is a complete ecommerce platform combining a customer storefront and a staff-only admin suite. Both experiences share the same Supabase database, API layer, and media pipeline, giving the team one source of truth for catalog, orders, and customer activity.</p>
+		</section>
+
+		<section>
+			<h2>How It Works</h2>
+			<ul>
+				<li>Storefront clients browse products with search, filters, and variants, then check out with shipping rates and COD payment.</li>
+				<li>Orders are stored in Supabase; confirmed orders sync to Maystro Delivery for fulfillment and tracking.</li>
+				<li>Admins authenticate with Supabase Auth and manage catalog, orders, shipping, loyalty, and CMS content.</li>
+				<li>Media uploads flow through signed URLs from /api/upload-url into Supabase Storage for secure product imagery.</li>
+			</ul>
 		</section>
 
 		<section>
 			<h2>Key Features</h2>
 			<ul>
-				<li>Secured login gateway with encrypted credential vault and scoped admin or operator roles.</li>
-				<li>Background interception using Telephony and Background SMS services with explicit sender whitelists.</li>
-				<li>Dual persistence strategy that syncs straightforwardly to Firebase Realtime Database and falls back to SQLCipher when offline.</li>
-				<li>Contact book integration to surface readable sender names, searchable history, and moderation workflows.</li>
+				<li>Multilingual storefront (FR/EN/AR) with full RTL layout support.</li>
+				<li>Search, category/brand pages, attribute filtering, sorting, and pagination.</li>
+				<li>Cart, wishlist sync, coupons, and loyalty point redemption.</li>
+				<li>Admin dashboard KPIs, order management, and catalog CRUD.</li>
+				<li>CMS pages, site settings, and marketing blocks editable from the admin panel.</li>
 			</ul>
 		</section>
 
 		<section>
 			<h2>Tech Stack</h2>
 			<ul>
-				<li>Flutter (Dart) with Provider for state management and AdaptiveTheme for responsive UI.</li>
-				<li>Firebase Core and Realtime Database, SharedPreferences, and SQLCipher (sqflite_sqlcipher) for storage.</li>
-				<li>Android platform services: Telephony, Background SMS, Flutter Background, Contacts Service, and Permission Handler.</li>
-				<li>Supporting packages: Awesome Dialog, SidebarX, Connectivity Plus, intl, and flutter_datetime_picker_plus.</li>
+				<li>Vue 3 (Composition API), TypeScript, Vite, Pinia, Vue Router, and Tailwind CSS.</li>
+				<li>Supabase Postgres/Auth/Storage with Vercel serverless functions in api/.</li>
+				<li>Chart.js + vue-chartjs for admin analytics.</li>
+				<li>Maystro Delivery APIs with optional Telegram order alerts.</li>
 			</ul>
 		</section>
 
 		<section>
-			<h2>Operations Workflow</h2>
-			<p>Administrators configure whitelisted senders and fallback numbers from a responsive control panel. On-device services capture messages instantly, store them in an encrypted queue, and trigger Firebase sync when connectivity is available. Moderators review logs in bulk, apply human approvals where needed, and export structured history for audit teams.</p>
+			<h2>Data + Media Flow</h2>
+			<ul>
+				<li>Storefront uses the Supabase anon key for authentication, profile data, and wishlist syncing.</li>
+				<li>Admin writes go through serverless APIs with the Supabase service role to enforce privileges.</li>
+				<li>Product images live in the product-images bucket and are uploaded through signed URLs.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Integrations &amp; Automation</h2>
+			<ul>
+				<li>Maystro Delivery order creation, status refresh, and pricing lookups.</li>
+				<li>Telegram alerts for new or confirmed orders (optional).</li>
+				<li>Sitemap generation through a scripted crawler for SEO.</li>
+			</ul>
 		</section>
 
 		<section>
 			<h2>Outcomes</h2>
 			<ul>
-				<li>Guarantees visibility for critical SMS by forwarding only vetted senders in real time.</li>
-				<li>Delivers resilient operations with encrypted offline buffering that auto-synchronises once the device reconnects.</li>
-				<li>Equips admins with analytics, whitelist management, and controlled outbound campaigns.</li>
+				<li>Unified retail operations with a shared database across storefront and admin.</li>
+				<li>Localized shopping experience with RTL Arabic coverage.</li>
+				<li>Streamlined fulfillment through Maystro integration and automated alerts.</li>
 			</ul>
 		</section>
 
@@ -66,24 +90,24 @@
 			<div class="project__gallery" data-gallery>
 				<div class="project__gallery-track">
 					<figure>
-						<img src="../../img/projects/sms_forwarder/whitelist.jpg" alt="SMS Forwarder whitelist management mockup" />
-						<figcaption>Admins curate trusted senders and escalation channels in one view.</figcaption>
+						<img src="../../img/projects/nokhba_store/home-screen.png" alt="Nokhba Store storefront home screen" />
+						<figcaption>Storefront home screen highlights featured categories and promotions.</figcaption>
 					</figure>
 					<figure>
-						<img src="../../img/projects/sms_forwarder/delivery-health.jpg" alt="SMS Forwarder delivery health dashboard" />
-						<figcaption>Delivery health widget surfaces outages, retries, and carrier latency.</figcaption>
+						<img src="../../img/projects/nokhba_store/shop-screen.png" alt="Nokhba Store shop listing screen" />
+						<figcaption>Shop listing shows search, category filters, and product cards.</figcaption>
 					</figure>
 					<figure>
-						<img src="../../img/projects/sms_forwarder/automation-rules.jpg" alt="SMS Forwarder automation rules" />
-						<figcaption>Granular automation rules filter, transform, and forward mission-critical alerts.</figcaption>
+						<img src="../../img/projects/nokhba_store/cart-screen.png" alt="Nokhba Store cart screen" />
+						<figcaption>Cart screen keeps quantities, coupons, and totals in sync.</figcaption>
 					</figure>
 					<figure>
-						<img src="../../img/projects/sms_forwarder/audit-trail.jpg" alt="SMS Forwarder audit trail view" />
-						<figcaption>End-to-end audit trail retains encrypted payloads for compliance reviews.</figcaption>
+						<img src="../../img/projects/nokhba_store/checkout-screen.png" alt="Nokhba Store checkout screen" />
+						<figcaption>Checkout captures address details, shipping, and confirmation.</figcaption>
 					</figure>
 					<figure>
-						<img src="../../img/projects/sms_forwarder/insights.jpg" alt="SMS Forwarder insights report" />
-						<figcaption>Volume insights expose spikes by sender, tower, and severity for ops teams.</figcaption>
+						<img src="../../img/projects/nokhba_store/admin-panel-dark.png" alt="Nokhba Store admin panel" />
+						<figcaption>Admin panel centralizes orders, catalog, and analytics.</figcaption>
 					</figure>
 				</div>
 				<button class="project__gallery-nav project__gallery-nav--prev" type="button" data-gallery-prev aria-label="Previous screenshot">
@@ -99,8 +123,9 @@
 		<section>
 			<h2>Links</h2>
 			<ul class="project__links">
-				<li><a href="mailto:yazidaitallala@hotmail.com?subject=SMS%20Forwarder%20Demo%20Request">Request a walkthrough</a></li>
-				<li><span>Status:</span> In production with private repositories</li>
+				<li><a href="https://nokhba-store.vercel.app" target="_blank" rel="noreferrer noopener">Visit Nokhba Store</a></li>
+				<li><a href="mailto:yazidaitallala@hotmail.com?subject=Nokhba%20Store%20Demo%20Request">Request a walkthrough</a></li>
+				<li><span>Status:</span> Live deployment with private repos</li>
 			</ul>
 		</section>
 	</main>

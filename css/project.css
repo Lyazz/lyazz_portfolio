@@ -260,13 +260,16 @@ a:hover{
 .project__gallery.is-carousel .project__gallery-track{
 	display: flex;
 	gap: 0;
-	overflow: hidden;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
 	transition: transform .45s ease;
 }
 
 .project__gallery.is-carousel .project__gallery-track figure{
 	flex: 0 0 100%;
 	max-width: 100%;
+	scroll-snap-align: start;
 }
 
 .project__gallery figure{
