@@ -77,6 +77,11 @@ body{
 	z-index: 5;
 	pointer-events: none;
 	overflow: hidden;
+	opacity: 0;
+	transition: opacity .6s ease;
+}
+#snow-canvas.is-visible{
+	opacity: 1;
 }
 #snow-canvas canvas{
 	display: block;
@@ -499,7 +504,7 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 .deebo_fn__cv .cv__content section{
 	width: 100%;
 	padding: clamp(28px, 3vw, 42px);
-	background: linear-gradient(155deg, var(--surface-primary), var(--surface-secondary));
+	background: linear-gradient(155deg, rgba(60, 56, 88, 0.72), rgba(35, 32, 54, 0.72));
 	margin-bottom: 30px;
 	box-shadow: 0 36px 90px -58px var(--card-shadow);
 	border-radius: 22px;
@@ -519,7 +524,7 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 .section_header{
 	width: 100%;
 	float: left;
-	background: linear-gradient(145deg, rgba(25, 22, 41, 0.96), rgba(7, 6, 14, 0.94));
+	background: linear-gradient(145deg, rgba(25, 22, 41, 0.86), rgba(7, 6, 14, 0.84));
 	border: 1px solid rgba(255,255,255,0.05);
 	box-shadow: 0 50px 120px -80px rgba(4, 3, 10, 0.9);
 	overflow: hidden;
