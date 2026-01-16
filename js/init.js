@@ -23,6 +23,7 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 				FrenifyDeebo.contactForm();
 				FrenifyDeebo.anchor();
 				FrenifyDeebo.aos();
+				FrenifyDeebo.snow();
 				FrenifyDeebo.scrollProgress();
 			},
 			
@@ -104,6 +105,44 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 					scrollEl.addEventListener('scroll', onScroll, {passive: true});
 				}
 				window.addEventListener('resize', onScroll);
+			},
+
+			snow: function(){
+				var snowContainer = document.getElementById('snow-canvas');
+				if(!snowContainer || typeof particlesJS === 'undefined'){
+					return;
+				}
+				if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+					return;
+				}
+				particlesJS('snow-canvas', {
+					particles: {
+						number: { value: 70, density: { enable: true, value_area: 900 } },
+						color: { value: '#ffffff' },
+						shape: { type: 'circle' },
+						opacity: { value: 0.35, random: true, anim: { enable: false } },
+						size: { value: 3, random: true },
+						line_linked: { enable: false },
+						move: {
+							enable: true,
+							speed: 0.6,
+							direction: 'bottom',
+							random: true,
+							straight: false,
+							out_mode: 'out',
+							bounce: false
+						}
+					},
+					interactivity: {
+						detect_on: 'canvas',
+						events: {
+							onhover: { enable: false },
+							onclick: { enable: false },
+							resize: true
+						}
+					},
+					retina_detect: true
+				});
 			},
 		
 		anchor: function(){

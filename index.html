@@ -43,6 +43,7 @@
 			<!-- CV Background -->
 			<div class="cv__bg"></div>
 			<div class="cv__bg2"></div>
+			<div id="snow-canvas" aria-hidden="true"></div>
 			<!-- /CV Background -->
 
 			<!-- CV Left Side -->
@@ -55,33 +56,34 @@
 					<p class="quote">Innovative software developer with 5+ years building cross-platform experiences and ready to help you ship your next release. <a href="#contact" class="anchor">Let's collaborate</a></p>
 					<ul class="contact_info">
 						<li>
-							<span class="icon"><img src="svg/location.svg" alt="" class="fn__svg"></span>
+							<span class="icon"><span class="iconify fn__svg" data-icon="mdi:map-marker" aria-hidden="true"></span></span>
 							<p>Algiers, Algeria</p>
 						</li>
 						
 						<li>
-							<span class="icon"><img src="svg/message.svg" alt="" class="fn__svg"></span>
+							<span class="icon"><span class="iconify fn__svg" data-icon="mdi:email-outline" aria-hidden="true"></span></span>
 							<p><a href="mailto:yazidaitallala@hotmail.com">yazidaitallala@hotmail.com</a></p>
 						</li>
 						<li>
-							<span class="icon"><img src="svg/call.svg" alt="" class="fn__svg"></span>
+							<span class="icon"><span class="iconify fn__svg" data-icon="mdi:phone" aria-hidden="true"></span></span>
 							<p><a href="tel:+213540801436">+213 540 80 14 36</a></p>
 						</li>
+						
 					</ul>
 					<ul class="social">
 						<li>
 							<a href="https://www.linkedin.com/in/lyazz00/" target="_blank" title="LinkedIn">
-								<img class="fn__svg" src="svg/linkedin.svg" alt="LinkedIn profile" />
+								<span class="iconify fn__svg" data-icon="mdi:linkedin" aria-hidden="true"></span>
 							</a>
 						</li>
 						<li>
 							<a href="https://github.com/Lyazz" target="_blank" title="GitHub">
-								<img class="fn__svg" src="svg/github.svg" alt="GitHub profile" />
+								<span class="iconify fn__svg" data-icon="mdi:github" aria-hidden="true"></span>
 							</a>
 						</li>
 						<li>
 							<a href="https://www.instagram.com/lyazzid/" target="_blank" title="Instagram">
-								<img class="fn__svg" src="svg/instagram.svg" alt="Instagram profile" />
+								<span class="iconify fn__svg" data-icon="mdi:instagram" aria-hidden="true"></span>
 							</a>
 						</li>
 					</ul>
@@ -561,20 +563,22 @@
 
 </div>
 
-<a class="floating-cv-btn" href="docs/yazid-aitallala-cv.pdf" download aria-label="Download curriculum vitae">
-	<svg class="floating-cv-btn__icon" width="22" height="22" viewBox="0 0 24 24" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-		<title>Download curriculum vitae</title>
-		<path d="M6 17v2a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-		<path d="M12 3v12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-		<path d="m8 11 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-	</svg>
-	<span class="floating-cv-btn__text">Download CV</span>
-</a>
+<div class="floating-actions" role="group" aria-label="Quick actions">
+	<a class="floating-whatsapp-btn" href="https://wa.me/+213540801436" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+		<span class="floating-whatsapp-btn__icon iconify" data-icon="mdi:whatsapp" aria-hidden="true"></span>
+	</a>
+	<a class="floating-cv-btn" href="docs/yazid-aitallala-cv.pdf" download aria-label="Download curriculum vitae">
+		<span class="floating-cv-btn__icon iconify" data-icon="mdi:download" aria-hidden="true"></span>
+		<span class="floating-cv-btn__text">Download CV</span>
+	</a>
+</div>
 
 <!-- Scripts -->
 	<script type="text/javascript" src="js/jquery.js?ver=4"></script>
 	<script type="text/javascript" src="js/animated-headlines.js?ver=4"></script>
 	<script type="text/javascript" src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+	<script type="text/javascript" src="js/iconify.min.js"></script>
+	<script type="text/javascript" src="js/vendor/particles.js"></script>
 	<script type="text/javascript" src="js/init.js?ver=4"></script>
 <!-- /Scripts -->
 
