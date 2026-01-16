@@ -23,7 +23,6 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 				FrenifyDeebo.contactForm();
 				FrenifyDeebo.anchor();
 				FrenifyDeebo.aos();
-				FrenifyDeebo.snow();
 				FrenifyDeebo.scrollProgress();
 			},
 			
@@ -107,101 +106,6 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 				window.addEventListener('resize', onScroll);
 			},
 
-			snow: function(){
-				var snowContainer = document.getElementById('snow-canvas');
-				if(!snowContainer || typeof particlesJS === 'undefined'){
-					return;
-				}
-				if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-					return;
-				}
-				particlesJS('snow-canvas', {
-					particles: {
-						number: { value: 110, density: { enable: true, value_area: 900 } },
-						color: { value: '#ffffff' },
-						shape: { type: 'circle' },
-						opacity: { value: 0.6, random: true, anim: { enable: false } },
-						size: { value: 4.5, random: true },
-						line_linked: { enable: false },
-						move: {
-							enable: true,
-							speed: 0.9,
-							direction: 'bottom',
-							random: true,
-							straight: false,
-							out_mode: 'out',
-							bounce: false
-						}
-					},
-					interactivity: {
-						detect_on: 'canvas',
-						events: {
-							onhover: { enable: false },
-							onclick: { enable: false },
-							resize: true
-						}
-					},
-					retina_detect: true
-				});
-				FrenifyDeebo.snowVisibility(snowContainer);
-			},
-
-			snowVisibility: function(snowContainer){
-				if(!snowContainer){
-					return;
-				}
-				var sections = document.querySelectorAll('.cv__content section');
-				if(!sections.length || typeof IntersectionObserver === 'undefined'){
-					snowContainer.classList.add('is-visible');
-					return;
-				}
-				var observer = null;
-				var visibleSections = new Set();
-				var show = function(){
-					snowContainer.classList.add('is-visible');
-				};
-				var hide = function(){
-					snowContainer.classList.remove('is-visible');
-				};
-				var createObserver = function(){
-					if(observer){
-						observer.disconnect();
-					}
-					visibleSections.clear();
-					var root = window.innerWidth <= 1040 ? document.querySelector('.deebo_fn__cv') : document.querySelector('.cv__content');
-					if(!root){
-						show();
-						return;
-					}
-					observer = new IntersectionObserver(function(entries){
-						entries.forEach(function(entry){
-							if(entry.isIntersecting){
-								visibleSections.add(entry.target);
-							}else{
-								visibleSections.delete(entry.target);
-							}
-						});
-						if(visibleSections.size){
-							show();
-						}else{
-							hide();
-						}
-					}, { root: root, threshold: 0.15 });
-					sections.forEach(function(section){
-						observer.observe(section);
-					});
-				};
-
-				createObserver();
-
-				var resizeTimer = null;
-				window.addEventListener('resize', function(){
-					if(resizeTimer){
-						window.clearTimeout(resizeTimer);
-					}
-					resizeTimer = window.setTimeout(createObserver, 120);
-				});
-			},
 		
 		anchor: function(){
 
