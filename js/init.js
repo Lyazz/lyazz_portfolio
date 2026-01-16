@@ -20,15 +20,7 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 				FrenifyDeebo.imgToSVG();
 				FrenifyDeebo.progress();
 				FrenifyDeebo.resume();
-				FrenifyDeebo.loadBlogPosts();
-				FrenifyDeebo.modal();
-				FrenifyDeebo.progress2();
 				FrenifyDeebo.contactForm();
-				FrenifyDeebo.toTopJumper();
-				FrenifyDeebo.rating();
-				FrenifyDeebo.isotope();
-				FrenifyDeebo.portfolioFilter();
-				FrenifyDeebo.magnific();
 				FrenifyDeebo.anchor();
 				FrenifyDeebo.aos();
 				FrenifyDeebo.scrollProgress();
@@ -131,291 +123,60 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 			});	
 		},
 		
-		magnific: function(){
-			$('.gallery_zoom').each(function() { // the containers for all your galleries
-				$(this).magnificPopup({
-					delegate: 'a.zoom', // the selector for gallery item
-					type: 'image',
-					gallery: {
-					  enabled:true
-					},
-					removalDelay: 300,
-					mainClass: 'mfp-fade'
-				});
-
-			});
-			$('.popup-youtube, .popup-vimeo').each(function() { // the containers for all your galleries
-				$(this).magnificPopup({
-					disableOn: 700,
-					type: 'iframe',
-					mainClass: 'mfp-fade',
-					removalDelay: 160,
-					preloader: false,
-					fixedContentPos: false
-				});
-			});
-
-			$('.soundcloude_link').magnificPopup({
-			  type : 'image',
-			   gallery: {
-				   enabled: true, 
-			   },
-			});	
-		},
-		
-		portfolioFilter: function(){
-			var filter		 = $('.fn_cs_portfolio .portfolio_filter ul');
-
-			if(filter.length){
-				// Isotope Filter 
-				filter.find('a').on('click', function(){
-					var element		= $(this);
-					var selector 	= element.attr('data-filter');
-					var list		= element.closest('.fn_cs_portfolio').find('.portfolio_list').children('ul');
-					list.isotope({ 
-						filter				: selector,
-						animationOptions	: {
-							duration			: 750,
-							easing				: 'linear',
-							queue				: false
-						}
-					});
-
-					filter.find('a').removeClass('current');
-					element.addClass('current');
-					return false;
-				});	
-			}	
-		},
-		
-		isotope: function(){
-			$('.grid').masonry({
-				itemSelector: '.grid-item',
-			});	
-		},
-		
-		
-		rating: function(){
-			$('.t_rating').each(function(){
-				var e 		= $(this),
-					stars 	= parseFloat(e.data('stars'));
-				var a	= stars * 20;
-				var b 	= 100 - a;
-				e.find('.rating_regular').css({width: b + '%'});
-				e.find('.rating_active').css({width: a + '%'});
-			});
-		},
-		
-		
-		toTopJumper: function(){
-			var totop		= $('.deebo_fn_totop');
-			if(totop.length){
-				totop.on('click', function(e) {
-					e.preventDefault();		
-					$("html, body").animate(
-						{ scrollTop: 0 }, 'slow');
-					return false;
-				});
-			}
-		},
-		
-		
-		fixedTotopScroll: function(){
-			var totop			= $('.deebo_fn_totop');
-			var height 			= 100;
-			if(totop.length){
-				if($('.cv__content').scrollTop() > height){
-					totop.addClass('scrolled');
-				}else{
-					totop.removeClass('scrolled');
-				}
-			}
-		},
-		
 		contactForm: function(){
 			var sendButton = $('#send_message');
 			if(!sendButton.length){ return; }
+			var sendLabel = sendButton.text();
+			var isSending = false;
 			sendButton.on('click', function(e){
 				e.preventDefault();
+				if(isSending){ return false; }
 				var form		= $('.section_contact .contact_form');
 				var name 		= $("#name").val().trim();
 				var subject 	= $("#subject").val().trim();
 				var message 	= $("#message").val().trim();
 				var spanSuccess	= form.find(".success");
 				var success     = spanSuccess.data('success');
-				var emailto     = form.data('email');
+				var emptyNotice = form.find(".empty_notice");
+				var emptyNoticeText = emptyNotice.find("span");
 
 				spanSuccess.empty();
-				if(name === ''|| subject === ''|| message === '' || !emailto){
-					$('.empty_notice').slideDown(500).delay(2000).slideUp(500);
+				if(name === ''|| subject === ''|| message === ''){
+					emptyNoticeText.text('Please fill in required fields.');
+					emptyNotice.slideDown(500).delay(2000).slideUp(500);
 					return false;
 				}
 
-				var bodyLines	= ["From: " + name, "", message].join("\n");
-				var mailtoHref	= "mailto:" + emailto + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(bodyLines);
-				window.location.href = mailtoHref;
+				isSending = true;
+				sendButton.addClass('is-loading').text('Sending...');
+				emptyNotice.hide();
 
-				spanSuccess.append("<span class='contact_success'>" + success + "</span>");
-				spanSuccess.slideDown(500).delay(4000).slideUp(500);
-				if(form.length){ form[0].reset(); }
+				fetch(form.attr('action') || '/api/contact', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						name: name,
+						subject: subject,
+						message: message
+					})
+				}).then(function(response){
+					if(!response.ok){ throw new Error('Request failed'); }
+					spanSuccess.append("<span class='contact_success'>" + success + "</span>");
+					spanSuccess.slideDown(500).delay(4000).slideUp(500);
+					if(form.length){ form[0].reset(); }
+				}).catch(function(){
+					emptyNoticeText.text('Unable to send message. Please try again.');
+					emptyNotice.slideDown(500).delay(3000).slideUp(500);
+				}).finally(function(){
+					isSending = false;
+					sendButton.removeClass('is-loading').text(sendLabel);
+				});
 				return false; 
 			});
 		},
 		
-		
-		progress2: function(){
-			$('.fn_cs_progress_bar').each(function() {
-				var pWrap 	= $(this);
-				pWrap.waypoint({handler: function(){FrenifyDeebo.progress2F(pWrap);},offset:'90%'});
-			});
-		},
-		
-		progress2F: function(container){
-			container.find('.progress_item').each(function(i) {
-				var progress 	= $(this);
-				var pValue 		= parseInt(progress.data('value'));
-				var percent 	= progress.find('.progress_percent');
-				var pBar 		= progress.find('.progress_bg');
-				pBar.css({width:pValue+'%'});
-				setTimeout(function(){
-					progress.addClass('open');
-					percent.html(pValue+'%').css({right:(100 - pValue)+ '%'});
-				},(i*500));
-			});	
-		},
-		modal: function(){
-			var self		= this;
-			var modalBox	= $('.deebo_fn_modalbox');
-			var item		= $('.modal_item');
-			var closePopup	= modalBox.find('.closer,.extra_closer');
-			var prevNext	= modalBox.find('.fn__nav');
-			var extraCloser = modalBox.find('.extra_closer');
-			extraCloser.on('mouseenter',function(){
-				modalBox.addClass('hovered');
-			}).on('mouseleave',function(){
-				modalBox.removeClass('hovered');
-			});
-			item.on('click',function(){
-				var element		= $(this);
-				var content 	= element.find('.fn__hidden').html();
-				
-				
-				var items		= element.closest('.modal_items'),
-					index		= element.attr('data-index'),
-					from		= items.attr('data-from');
-				prevNext.attr('data-index',index);
-				prevNext.attr('data-from',from);
-				
-				
-				$('body').addClass('modal');
-				modalBox.addClass('opened');
-				modalBox.find('.modal_in').html(content);
-				
-				self.modal_prevnext(prevNext,modalBox);
-				self.imgToSVG();
-				self.BgImg();
-				
-				return false;
-			});
-			self.modal_prevnext(prevNext,modalBox);
-			closePopup.on('click',function(){
-				modalBox.removeClass('opened hovered');
-				modalBox.find('.modal_in').html('');
-				$('body').removeClass('modal');
-				return false;
-			});
-		},
-		
-		modal_prevnext: function(prevNext,modalBox){
-			var self		= this;
-			prevNext.find('a').off().on('click',function(){
-				var e		= $(this);
-				var from 	= prevNext.attr('data-from');
-				var index	= parseInt(prevNext.attr('data-index'));
-				var itemss	= $('.modal_items[data-from="'+from+'"]');
-				var count	= parseInt(itemss.attr('data-count'));
-				if(e.hasClass('prev')){
-					index--;
-				}else{
-					index++;
-				}
-				if(index < 1){index = count;}
-				if(index > count){index = 1;}
-				
-				var content = itemss.find('.modal_item[data-index="'+index+'"] .fn__hidden').html();
-				prevNext.removeClass('disabled');
-				prevNext.attr('data-index',index);
-				
-				setTimeout(function(){
-					modalBox.find('.modal_in').fadeOut(500, function() {
-						$(this).html('').html(content).fadeIn(500);
-					});
-				},500);
-					
-				$(".deebo_fn_modalbox .modal_content").stop().animate({scrollTop:0}, 500, 'swing');
-				
-				self.modal_prevnext(prevNext,modalBox);
-				self.imgToSVG();
-				self.BgImg();
-				return false;
-			});
-		},
-		
-		loadBlogPosts: function(){
-			$('.section_tips .load_more a').on('mousedown',function(){
-				var element 	= $(this);
-				var text 		= element.find('.text');
-				// stop function if don't have more items
-				if(element.hasClass('done')){
-					element.addClass('hold');
-					text.text(element.attr('data-no'));
-					return false;
-				}
-			}).on('mouseup',function(){
-				var element 	= $(this);
-				var text 		= element.find('.text');
-				// stop function if don't have more items
-				if(element.hasClass('done')){
-					element.removeClass('hold');
-					text.text(element.attr('data-done'));
-					return false;
-				}
-			}).on('mouseleave',function(){
-				var element 	= $(this);
-				var text 		= element.find('.text');
-				// stop function if don't have more items
-				if(element.hasClass('done')){
-					element.removeClass('hold');
-					text.text(element.attr('data-done'));
-					return false;
-				}
-			});
-			$('.section_tips .load_more a').on('click',function(){
-				var element 	= $(this);
-				var text 		= element.find('.text');
-				
-				// stop function if elements are loading right now
-				if(element.hasClass('loading') || element.hasClass('done')){return false;}
-				element.addClass('loading');
-				
-				
-				
-				
-				setTimeout(function(){
-					var listItem = element.closest('.section_tips').find('.be_animated');
-					listItem.each(function(i, e){
-						setTimeout(function(){
-							$(e).addClass('fadeInTop done');
-						}, (i*100));	
-					});
-					element.addClass('done').removeClass('loading');
-					text.text(element.attr('data-done'));
-				},1500);
-				
-				
-				return false;
-			});
-		},
 		
 		resume: function(){
 			$('.deebo_fn__cv .cv__content').scrollTop(0);
@@ -446,13 +207,6 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 					percent.html(pValue+'%').css({right:(100 - pValue)+ '%'});
 				},(i*500));
 			});	
-		},
-		
-		recallProgress: function(){
-			var tabs = $('.fn_cs_progress_bar');
-			tabs.find('.progress_bg').css({width:'0%'});
-			tabs.find('.progress_percent').html('').css({right:'100%'});
-			tabs.find('.progress_item').removeClass('open');
 		},
 		
 		imgToSVG: function(){
@@ -490,26 +244,5 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 	
 	// READY Functions
 	$(document).ready(function(){FrenifyDeebo.init();});
-	
-	// RESIZE Functions
-	$(window).on('resize',function(){
-		FrenifyDeebo.isotope();
-		setTimeout(function(){
-			FrenifyDeebo.isotope();
-		},1010);
-	});
-	
-	// LOAD Functions
-	$(window).on('load',function(){
-		
-		setTimeout(function(){
-			
-		},10);
-	});
-	
-	// SCROLL Functions
-	$('.cv__content').on('scroll',function(){
-		FrenifyDeebo.fixedTotopScroll();
-	});
   	
 })(jQuery);
