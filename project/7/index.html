@@ -10,6 +10,11 @@
 	<link rel="stylesheet" href="../../css/project.css" />
 </head>
 <body class="project-page">
+
+	<div class="scroll_progress" aria-hidden="true">
+		<span class="scroll_progress__bar"></span>
+	</div>
+
 	<header class="project__hero">
 		<a class="project__back" href="../../index.html">← Back to portfolio</a>
 		<h1>EcomSuite</h1>
@@ -80,7 +85,7 @@
 			<div class="project__gallery" data-gallery>
 				<div class="project__gallery-track">
 					<figure>
-						<img src="../../img/projects/ecomesuite/cover.png" alt="EcomSuite cover preview" />
+						<img src="../../img/projects/ecomesuite/cover.png" alt="EcomSuite cover preview" loading="lazy" decoding="async" />
 						<figcaption>Cover preview of the EcomSuite storefront and admin experience.</figcaption>
 					</figure>
 				</div>
@@ -98,6 +103,7 @@
 	<footer class="project__footer">
 		<p>Have a similar project in mind? <a href="mailto:yazidaitallala@hotmail.com">Email Me</a> or connect on <a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noreferrer noopener">LinkedIn</a>.</p>
 	</footer>
+	<script src="../../js/project-enhance.js"></script>
 	<script src="../../js/project-gallery.js"></script>
 </body>
 </html>

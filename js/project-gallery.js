@@ -22,12 +22,18 @@
 			this.nextBtn = root.querySelector('[data-gallery-next]');
 			this.dotsContainer = root.querySelector('[data-gallery-dots]');
 			this.index = 0;
+			this.autoplayDelay = 3000;
+			this.autoplayTimer = null;
+			this.prefersReducedMotion = window.matchMedia
+				? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+				: false;
 
 			this.root.classList.add('is-carousel');
 			if (this.slides.length > 1) {
 				this.root.classList.add('has-multiple');
 				this.createDots();
 				this.attachEvents();
+				this.startAutoplay();
 			} else {
 				this.toggleNav(false);
 			}
@@ -44,7 +50,10 @@
 				button.type = 'button';
 				button.className = 'project__gallery-dot';
 				button.setAttribute('aria-label', `Show image ${idx + 1}`);
-				button.addEventListener('click', () => this.goTo(idx));
+				button.addEventListener('click', () => {
+					this.goTo(idx);
+					this.resetAutoplay();
+				});
 				this.dotsContainer.appendChild(button);
 				return button;
 			});
@@ -52,17 +61,56 @@
 
 		attachEvents() {
 			if (this.prevBtn) {
-				this.prevHandler = () => this.goTo(this.index - 1);
+				this.prevHandler = () => {
+					this.goTo(this.index - 1);
+					this.resetAutoplay();
+				};
 				this.prevBtn.addEventListener('click', this.prevHandler);
 			}
 
 			if (this.nextBtn) {
-				this.nextHandler = () => this.goTo(this.index + 1);
+				this.nextHandler = () => {
+					this.goTo(this.index + 1);
+					this.resetAutoplay();
+				};
 				this.nextBtn.addEventListener('click', this.nextHandler);
 			}
 
 			this.resizeHandler = () => this.update();
 			window.addEventListener('resize', this.resizeHandler);
+			this.visibilityHandler = () => {
+				if (document.hidden) {
+					this.stopAutoplay();
+				} else {
+					this.startAutoplay();
+				}
+			};
+			document.addEventListener('visibilitychange', this.visibilityHandler);
+		}
+
+		startAutoplay() {
+			if (this.autoplayTimer || this.prefersReducedMotion || this.slides.length < 2) {
+				return;
+			}
+			this.autoplayTimer = window.setInterval(() => {
+				this.goTo(this.index + 1);
+			}, this.autoplayDelay);
+		}
+
+		stopAutoplay() {
+			if (!this.autoplayTimer) {
+				return;
+			}
+			window.clearInterval(this.autoplayTimer);
+			this.autoplayTimer = null;
+		}
+
+		resetAutoplay() {
+			if (this.prefersReducedMotion) {
+				return;
+			}
+			this.stopAutoplay();
+			this.startAutoplay();
 		}
 
 		goTo(targetIndex) {

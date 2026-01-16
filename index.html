@@ -22,6 +22,7 @@
 <!-- /Google Fonts -->
 
 <!-- Styles -->
+<link type="text/css" rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 <link type="text/css" rel="stylesheet" href="css/base.css?ver=4" />
 <link type="text/css" rel="stylesheet" href="css/magnific.css?ver=4" />
 <link type="text/css" rel="stylesheet" href="css/animated-headlines.css?ver=4" />
@@ -32,6 +33,10 @@
 </head>
 
 <body>
+
+<div class="scroll_progress" aria-hidden="true">
+	<span class="scroll_progress__bar"></span>
+</div>
 
 <div class="deebo_fn_main">
 			
@@ -111,7 +116,7 @@
 			<div class="cv__header">
 				<div class="in">
 					<div class="avatar">
-						<img src="img/header/1.jpg" alt="">
+						<img src="img/header/1.jpg" alt="Portrait of Yazid AITALLALA" decoding="async">
 					</div>
 					<h3><span>Yazid</span> AITALLALA</h3>
 					<p class="quote">Innovative mobile application developer with 5+ years building cross-platform experiences and ready to help you ship your next release. <a href="#contact" class="anchor">Let's collaborate</a></p>
@@ -155,7 +160,7 @@
 						<div class="left_hero_header">
 							<div class="circle">
 								<div class="bg_img" data-bg-img="img/header/1.jpg"></div>
-								<img src="img/thumb/square.jpg" alt="" />
+								<img src="img/thumb/square.jpg" alt="" decoding="async" />
 								<div class="circle_holder_blue"><span></span></div>
 								<div class="circle_holder_orange"><span></span></div>
 								<div class="lines">
@@ -205,6 +210,49 @@
 				<!-- /CV: Biography Section -->
 
 
+				<!-- CV: Experience Section -->
+				<section id="cv_experience">
+					<div class="section_title">
+						<h3>👨‍💻 Experience</h3>
+					</div>
+					<div class="fn_cs_boxed_list">
+						<ul>
+							<li>
+								<div class="item">
+									<div class="item_top">
+										<h5>Freelancer</h5>
+										<span>( 2023 — Present )</span>
+									</div>
+									<h3>Full Stack Developer</h3>
+									<p>Build full-stack mobile and desktop apps, from frontend to backend to deployment, working closely with founders and product teams.</p>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="item_top">
+										<h5>D-Soft Solutions, Béjaia</h5>
+										<span>( 2021 — 2023 )</span>
+									</div>
+									<h3>Mobile Applications Developer</h3>
+									<p>Built production-grade Flutter and Java applications, delivered desktop POS software, and prototyped Arduino-powered devices with custom PCBs and 3D-printed enclosures.</p>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="item_top">
+										<h5>Sonatrach Refinery, Algiers</h5>
+										<span>( Jan — Jun 2019 )</span>
+									</div>
+									<h3>End-of-Degree Internship</h3>
+									<p>Delivered a full-stack web application to evaluate supplier performance, providing actionable analytics for procurement teams.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<!-- /CV: Experience Section -->
+
+
 				<!-- CV: Education Section -->
 				<section id="cv_education">
 					<div class="section_title">
@@ -236,49 +284,6 @@
 					</div>
 				</section>
 				<!-- /CV: Education Section -->
-
-
-				<!-- CV: Experience Section -->
-				<section id="cv_experience">
-					<div class="section_title">
-						<h3>👨‍💻 Experience</h3>
-					</div>
-					<div class="fn_cs_boxed_list">
-						<ul>
-							<li>
-								<div class="item">
-									<div class="item_top">
-										<h5>Freelancer</h5>
-										<span>( 2023 — Present )</span>
-									</div>
-									<h3>Cross-Platform Mobile Developer</h3>
-									<p>Design and deliver Flutter apps end-to-end, from architecture and UI/UX through deployment to Google Play and the App Store, collaborating remotely with founders and product teams.</p>
-								</div>
-							</li>
-							<li>
-								<div class="item">
-									<div class="item_top">
-										<h5>D-Soft Solutions, Béjaia</h5>
-										<span>( 2021 — 2023 )</span>
-									</div>
-									<h3>Mobile Applications Developer</h3>
-									<p>Built production-grade Flutter and Java applications, delivered desktop POS software, and prototyped Arduino-powered devices with custom PCBs and 3D-printed enclosures.</p>
-								</div>
-							</li>
-							<li>
-								<div class="item">
-									<div class="item_top">
-										<h5>Sonatrach Refinery, Algiers</h5>
-										<span>( Jan — Jun 2019 )</span>
-									</div>
-									<h3>End-of-Degree Internship</h3>
-									<p>Delivered a full-stack web application to evaluate supplier performance, providing actionable analytics for procurement teams.</p>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<!-- /CV: Experience Section -->
 
 
 				<!-- CV: Skills Section -->
@@ -314,6 +319,14 @@
 
 						<div class="progress_item" data-value="80">
 							<div class="item_in">
+								<h3 class="progress_title">Web Development</h3>
+								<span class="progress_percent"></span>
+								<div class="progress_bg"></div>
+							</div>
+						</div>
+
+						<div class="progress_item" data-value="80">
+							<div class="item_in">
 								<h3 class="progress_title">UI/UX Design Systems</h3>
 								<span class="progress_percent"></span>
 								<div class="progress_bg"></div>
@@ -325,7 +338,7 @@
 					<div class="fn_cs_info_items">
 						<ul>
 							<li><p>Programming Languages: <span>Dart, Java, C++, Python, PHP, JavaScript</span></p></li>
-							<li><p>Frameworks &amp; Systems: <span>Flutter, CodeIgniter, Bootstrap, JQuery, Firebase, Arduino IoT, MySQL, Cloud, Git</span></p></li>
+							<li><p>Frameworks &amp; Systems: <span>Flutter, Nuxt.js, Vue.js, CodeIgniter, Firebase, Supabase, Arduino IoT, MySQL, Cloud, Git</span></p></li>
 							<li><p>Other Tools: <span>3D Design (AutoCAD Tinkercad), Adobe Photoshop, Microsoft Office Suite</span></p></li>
 						</ul>
 					</div>
@@ -333,106 +346,124 @@
 				<!-- /CV: Skills Section -->
 
 				<!-- CV: Project Highlights -->
-				<section id="cv_projects" class="section_projects">
-					<div class="section_title">
-						<h3>🚀 Project Highlights</h3>
-					</div>
-					<p>Recent builds that blend thoughtful UX, resilient architecture, and measurable outcomes across mobile, desktop, and connected platforms.</p>
-					<div class="projects__layout">
-						<div class="projects__stories">
-							<div class="fn_cs_boxed_list">
-								<ul>
-									<li>
-										<article class="item project_card">
-											<figure class="project_card__media" data-device="desktop">
-												<div class="project_card__device">
-													<img src="img/projects/nexsync_pos/dashboard.jpg" alt="NexSync POS dashboard overview" />
+					<section id="cv_projects" class="section_projects">
+						<div class="section_title" data-aos="fade-right">
+							<h3>🚀 Project Highlights</h3>
+						</div>
+						<p data-aos="fade-up" data-aos-delay="120">Recent builds that blend thoughtful UX, resilient architecture, and measurable outcomes across mobile, web, desktop, and connected platforms.</p>
+						<div class="projects__layout">
+							<div class="projects__stories">
+								<div class="fn_cs_boxed_list">
+									<ul>
+										<li>
+											<a class="item project_card" href="project/1/index.html" aria-label="NexSync POS project details" data-aos="fade-up" data-aos-delay="0">
+												<figure class="project_card__media" data-device="desktop">
+													<div class="project_card__device">
+														<img src="img/projects/nexsync_pos/dashboard.jpg" alt="NexSync POS dashboard overview" loading="lazy" decoding="async" />
+													</div>
+												</figure>
+												<div class="project_card__body">
+													<div class="item_top">
+														<h5>NexSync POS</h5>
+														<span>Cross-Platform Application</span>
+													</div>
+													<h3>Real-time sales and AI-assisted inventory forecasting across desktop and mobile.</h3>
+													<p>Built with Flutter, Dart, Provider, Socket.io, SQLite, MySQL, Firebase, and TensorFlow to keep teams aligned no matter the device.</p>
+													<p><span class="project_card__cta">Explore the build</span></p>
 												</div>
-											</figure>
-											<div class="project_card__body">
-												<div class="item_top">
-													<h5>NexSync POS</h5>
-													<span>Cross-Platform Application</span>
+											</a>
+										</li>
+										<li>
+											<a class="item project_card" href="project/2/index.html" aria-label="Matima App project details" data-aos="fade-up" data-aos-delay="120">
+												<figure class="project_card__media" data-device="mobile">
+													<div class="project_card__device">
+														<img src="img/projects/matima_app/home-access.jpg" alt="Matima App accessibility hub" loading="lazy" decoding="async" />
+													</div>
+												</figure>
+												<div class="project_card__body">
+													<div class="item_top">
+														<h5>Matima App</h5>
+														<span>Mobile Application</span>
+													</div>
+													<h3>Accessible smartphone experience for seniors with voice guidance and reminders.</h3>
+													<p>Flutter, Dart, Provider, and text-to-speech APIs deliver clarity and independence for users and caregivers alike.</p>
+													<p><span class="project_card__cta">Explore the build</span></p>
 												</div>
-												<h3>Real-time sales and AI-assisted inventory forecasting across desktop and mobile.</h3>
-												<p>Built with Flutter, Dart, Provider, Socket.io, SQLite, MySQL, Firebase, and TensorFlow to keep teams aligned no matter the device.</p>
-												<p><a href="project/1/index.html">Explore the build</a></p>
-											</div>
-										</article>
-									</li>
-									<li>
-										<article class="item project_card">
-											<figure class="project_card__media" data-device="mobile">
-												<div class="project_card__device">
-													<img src="img/projects/matima_app/home-access.jpg" alt="Matima App accessibility hub" />
+											</a>
+										</li>
+										<li>
+											<a class="item project_card" href="project/5/index.html" aria-label="Nokhba Store project details" data-aos="fade-up" data-aos-delay="240">
+												<figure class="project_card__media" data-device="desktop">
+													<div class="project_card__device">
+														<img src="img/projects/nokhba_store/home-screen.png" alt="Nokhba Store storefront home screen" loading="lazy" decoding="async" />
+													</div>
+												</figure>
+												<div class="project_card__body">
+													<div class="item_top">
+														<h5>Nokhba Store</h5>
+														<span>Full-Stack Ecommerce Platform</span>
+													</div>
+													<h3>Multilingual storefront and admin suite powering a full retail workflow.</h3>
+													<p>Vue 3 + Vite frontend with Supabase-backed APIs, loyalty/referrals, Maystro delivery integration, and RTL-ready Arabic UI.</p>
+													<p><span class="project_card__cta">Explore the build</span></p>
 												</div>
-											</figure>
-											<div class="project_card__body">
-												<div class="item_top">
-													<h5>Matima App</h5>
-													<span>Mobile Application</span>
+											</a>
+										</li>
+										<li>
+											<a class="item project_card" href="project/7/index.html" aria-label="EcomSuite project details" data-aos="fade-up" data-aos-delay="0">
+												<figure class="project_card__media" data-device="desktop">
+													<div class="project_card__device">
+														<img src="img/projects/ecomesuite/cover.png" alt="EcomSuite cover preview" loading="lazy" decoding="async" />
+													</div>
+												</figure>
+												<div class="project_card__body">
+													<div class="item_top">
+														<h5>EcomSuite</h5>
+														<span>Commerce Platform Suite</span>
+													</div>
+													<h3>Unified storefront, admin, loyalty, and delivery tracking built for Algerian commerce.</h3>
+													<p>Multilingual shopping, COD checkout, wilaya delivery rates, and calm operations in a single suite.</p>
+													<p><span class="project_card__cta">Explore the build</span></p>
 												</div>
-												<h3>Accessible smartphone experience for seniors with voice guidance and reminders.</h3>
-												<p>Flutter, Dart, Provider, and text-to-speech APIs deliver clarity and independence for users and caregivers alike.</p>
-												<p><a href="project/2/index.html">Explore the build</a></p>
-											</div>
-										</article>
-									</li>
-									<li>
-										<article class="item project_card">
-											<figure class="project_card__media" data-device="desktop">
-												<div class="project_card__device">
-													<img src="img/projects/nokhba_store/home-screen.png" alt="Nokhba Store storefront home screen" />
+											</a>
+										</li>
+										<li>
+											<a class="item project_card" href="project/8/index.html" aria-label="Cablin project details" data-aos="fade-up" data-aos-delay="120">
+												<figure class="project_card__media" data-device="desktop">
+													<div class="project_card__device">
+														<img src="img/projects/cablin/home.png" alt="Cablin home page placeholder" loading="lazy" decoding="async" />
+													</div>
+												</figure>
+												<div class="project_card__body">
+													<div class="item_top">
+														<h5>Cablin</h5>
+														<span>Industrial Landing Page</span>
+													</div>
+													<h3>Landing page for an Algerian low-voltage cable manufacturer.</h3>
+													<p>Nuxt.js SSR build with Vue.js components and Tailwind CSS styling for a fast, crawlable site.</p>
+													<p><span class="project_card__cta">Explore the build</span></p>
 												</div>
-											</figure>
-											<div class="project_card__body">
-												<div class="item_top">
-													<h5>Nokhba Store</h5>
-													<span>Full-Stack Ecommerce Platform</span>
+											</a>
+										</li>
+										<li>
+											<a class="item project_card" href="project/6/index.html" aria-label="Excel Invoicing Tool project details" data-aos="fade-up" data-aos-delay="240">
+												<figure class="project_card__media" data-device="desktop">
+													<div class="project_card__device">
+														<img src="img/projects/activity_manager/dashboard.jpg" alt="Excel Invoicing Tool dashboard mockup" loading="lazy" decoding="async" />
+													</div>
+												</figure>
+												<div class="project_card__body">
+													<div class="item_top">
+														<h5>Excel Invoicing Tool</h5>
+														<span>Desktop Productivity App</span>
+													</div>
+													<h3>Transforms raw Excel timesheets into polished activity catalogs in minutes.</h3>
+													<p>Desktop Flutter app with tutorial coach marks, DataTable2 dashboards, Excel parsing, and SQLite storage for fast weekly synthesis.</p>
+													<p><span class="project_card__cta">Explore the build</span></p>
 												</div>
-												<h3>Multilingual storefront and admin suite powering a full retail workflow.</h3>
-												<p>Vue 3 + Vite frontend with Supabase-backed APIs, loyalty/referrals, Maystro delivery integration, and RTL-ready Arabic UI.</p>
-												<p><a href="project/5/index.html">Explore the build</a></p>
-											</div>
-										</article>
-									</li>
-									<li>
-										<article class="item project_card">
-											<figure class="project_card__media" data-device="desktop">
-												<div class="project_card__device">
-													<img src="img/projects/ecomesuite/cover.png" alt="EcomSuite cover preview" />
-												</div>
-											</figure>
-											<div class="project_card__body">
-												<div class="item_top">
-													<h5>EcomSuite</h5>
-													<span>Commerce Platform Suite</span>
-												</div>
-												<h3>Unified storefront, admin, loyalty, and delivery tracking built for Algerian commerce.</h3>
-												<p>Multilingual shopping, COD checkout, wilaya delivery rates, and calm operations in a single suite.</p>
-												<p><a href="project/7/index.html">Explore the build</a></p>
-											</div>
-										</article>
-									</li>
-									<li>
-										<article class="item project_card">
-											<figure class="project_card__media" data-device="desktop">
-												<div class="project_card__device">
-													<img src="img/projects/activity_manager/dashboard.jpg" alt="Excel Invoicing Tool dashboard mockup" />
-												</div>
-											</figure>
-											<div class="project_card__body">
-												<div class="item_top">
-													<h5>Excel Invoicing Tool</h5>
-													<span>Desktop Productivity App</span>
-												</div>
-												<h3>Transforms raw Excel timesheets into polished activity catalogs in minutes.</h3>
-												<p>Desktop Flutter app with tutorial coach marks, DataTable2 dashboards, Excel parsing, and SQLite storage for fast weekly synthesis.</p>
-												<p><a href="project/6/index.html">Explore the build</a></p>
-											</div>
-										</article>
-									</li>
-								</ul>
+											</a>
+										</li>
+									</ul>
 							</div>
 						</div>
 					</div>
@@ -522,7 +553,7 @@
 										<div class="t_name">
 											<p>Nassim Tebbani</p>
 										</div>
-										<p>Product Designer & collaborator</p>
+											<p class="t_title">Product Designer & collaborator</p>
 									</div>
 								</div>
 							</li>
@@ -538,7 +569,7 @@
 										<div class="t_name">
 											<p>Romaissa Belaroussi</p>
 										</div>
-										<p>Client</p>
+											<p class="t_title">Client</p>
 									</div>
 								</div>
 							</li>
@@ -554,7 +585,7 @@
 										<div class="t_name">
 											<p>Rahmani Amine</p>
 										</div>
-										<p>Teacher Researcher, University of Algiers 1</p>
+											<p class="t_title">Teacher Researcher, University of Algiers 1</p>
 									</div>
 								</div>
 							</li>
@@ -570,7 +601,7 @@
 										<div class="t_name">
 											<p>Amine Mohamed Adouane</p>
 										</div>
-										<p>Maître de conférences, Université Alger 1</p>
+											<p class="t_title">Maître de conférences, Université Alger 1</p>
 									</div>
 								</div>
 							</li>
@@ -622,8 +653,6 @@
 	</div>
 	<!-- /Modal CV Card -->
 
-	
-
 </div>
 
 <a class="floating-cv-btn" href="docs/yazid-aitallala-cv.pdf" download aria-label="Download curriculum vitae">
@@ -637,13 +666,14 @@
 </a>
 
 <!-- Scripts -->
-<script type="text/javascript" src="js/jquery.js?ver=4"></script>
-<script type="text/javascript" src="js/isotope.js"></script>
-<script type="text/javascript" src="js/magnific.js"></script>
-<script type="text/javascript" src="js/animated-headlines.js?ver=4"></script>
-<script type="text/javascript" src="js/waypoints.js?ver=4"></script>
-<!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->
-<script type="text/javascript" src="js/init.js?ver=4"></script>
+	<script type="text/javascript" src="js/jquery.js?ver=4"></script>
+	<script type="text/javascript" src="js/isotope.js"></script>
+	<script type="text/javascript" src="js/magnific.js"></script>
+	<script type="text/javascript" src="js/animated-headlines.js?ver=4"></script>
+	<script type="text/javascript" src="js/waypoints.js?ver=4"></script>
+	<script type="text/javascript" src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+	<!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->
+	<script type="text/javascript" src="js/init.js?ver=4"></script>
 <!-- /Scripts -->
 
 </body>
