@@ -24,6 +24,7 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 				FrenifyDeebo.anchor();
 				FrenifyDeebo.aos();
 				FrenifyDeebo.scrollProgress();
+FrenifyDeebo.projectFilter();
 			},
 			
 			aos: function(){
@@ -52,7 +53,24 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 				}
 			},
 			
-			scrollProgress: function(){
+			
+		projectFilter: function() {
+			var $grid = .isotope({
+				itemSelector: '.project_item',
+				layoutMode: 'fitRows'
+			});
+
+			.on('click', '.filter_link', function(e) {
+				e.preventDefault();
+				var filterValue = .attr('data-filter');
+				$grid.isotope({ filter: filterValue });
+				.removeClass('active');
+				.addClass('active');
+				setTimeout(function() { AOS.refresh(); }, 500);
+			});
+		},
+
+scrollProgress: function(){
 				var bar = document.querySelector('.scroll_progress__bar');
 				if(!bar){
 					return;
