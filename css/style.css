@@ -1492,7 +1492,8 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 .section_contact .item.half{
 	width: 50%;
 }
-.section_contact .contact_form a{
+.section_contact .contact_form a,
+.section_contact .contact_form button{
 	display: block;
 	line-height: 26px;
 	white-space: nowrap;
@@ -1511,12 +1512,14 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	box-shadow: 0 24px 40px -28px rgba(10, 8, 24, 0.9);
 	transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
 }
-.section_contact .contact_form a:hover{
+.section_contact .contact_form a:hover,
+.section_contact .contact_form button:hover{
 	filter: brightness(1.08);
 	transform: translateY(-2px);
 	box-shadow: 0 30px 46px -28px rgba(10, 8, 24, 0.95);
 }
-.section_contact .contact_form a:focus{
+.section_contact .contact_form a:focus,
+.section_contact .contact_form button:focus{
 	outline: 1px dashed #444;
 }
 .empty_notice{
@@ -1931,4 +1934,95 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 		position: relative;
 		height: inherit;
 	}
+}
+
+
+.section_contact .contact_form button{
+	display: block;
+	width: 100%;
+	font-family: inherit;
+	cursor: pointer;
+	line-height: 26px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	padding: 20px 20px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
+	border: 2px solid transparent;
+	border-radius: 50px;
+	background: linear-gradient(135deg, var(--mc), var(--accent-strong));
+	box-shadow: 0 24px 40px -28px rgba(10, 8, 24, 0.9);
+	transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.section_contact .contact_form button:hover{
+	filter: brightness(1.08);
+	transform: translateY(-2px);
+	box-shadow: 0 30px 46px -28px rgba(10, 8, 24, 0.95);
+}
+.section_contact .contact_form button:focus{
+	outline: 1px dashed #444;
+}
+.contact_submit_btn {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.fn_cs_service_list .item_right h3.skill_icons_heading {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 8px;
+}
+.fn_cs_service_list .item_right h3.skill_icons_heading .iconify {
+	font-size: 24px;
+	width: 24px;
+	height: 24px;
+}
+
+html::-webkit-scrollbar {
+    width: 12px;
+}
+html::-webkit-scrollbar-track {
+    background: #0b0a13; 
+}
+html::-webkit-scrollbar-thumb {
+    background: var(--mc); 
+    border-radius: 6px;
+}
+html::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-strong); 
+}
+
+
+/* Project Filter */
+.projects_filter {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	margin-bottom: 30px;
+}
+.projects_filter .filter_link {
+	display: inline-block;
+	color: var(--surface-muted);
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 6px 16px;
+	border-radius: 50px;
+	background: rgba(12, 11, 22, 0.5);
+	border: 1px solid rgba(255,255,255,0.08);
+	transition: all .3s ease;
+	cursor: pointer;
+}
+.projects_filter .filter_link:hover,
+.projects_filter .filter_link.active {
+	background: var(--mc);
+	color: #fff;
+	border-color: var(--mc);
+	box-shadow: 0 4px 15px rgba(124, 113, 182, 0.3);
 }

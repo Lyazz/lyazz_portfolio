@@ -12,6 +12,9 @@
 
 <title>Yazid AITALLALA | Mobile Application Developer</title>
 
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="img/header/1.jpg" />
+
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -270,11 +273,21 @@
 							<h3>🚀 Project Highlights</h3>
 						</div>
 						<p data-aos="fade-up" data-aos-delay="120">Recent builds that blend thoughtful UX, resilient architecture, and measurable outcomes across mobile, web, desktop, and connected platforms.</p>
+						
+						<!-- Project Filters -->
+						<div class="projects_filter" data-aos="fade-up" data-aos-delay="200">
+							<a href="#" class="filter_link active" data-filter="*">All</a>
+							<a href="#" class="filter_link" data-filter=".mobile">Mobile</a>
+							<a href="#" class="filter_link" data-filter=".web">Web</a>
+							<a href="#" class="filter_link" data-filter=".desktop">Desktop</a>
+						</div>
+						<!-- /Project Filters -->
+
 						<div class="projects__layout">
 							<div class="projects__stories">
 								<div class="fn_cs_boxed_list">
 									<ul>
-										<li>
+										<li class="project_item web mobile desktop">
 											<a class="item project_card" href="project/7/index.html" aria-label="Swekly SaaS project details" data-aos="fade-up" data-aos-delay="0">
 												<figure class="project_card__media" data-device="desktop">
 													<div class="project_card__device">
@@ -292,7 +305,7 @@
 												</div>
 											</a>
 										</li>
-										<li>
+										<li class="project_item mobile desktop">
 											<a class="item project_card" href="project/1/index.html" aria-label="NexSync POS project details" data-aos="fade-up" data-aos-delay="120">
 												<figure class="project_card__media" data-device="desktop">
 													<div class="project_card__device">
@@ -310,7 +323,7 @@
 												</div>
 											</a>
 										</li>
-										<li>
+										<li class="project_item web mobile">
 											<a class="item project_card" href="project/5/index.html" aria-label="Nokhba Store project details" data-aos="fade-up" data-aos-delay="240">
 												<figure class="project_card__media" data-device="desktop">
 													<div class="project_card__device">
@@ -328,7 +341,7 @@
 												</div>
 											</a>
 										</li>
-										<li>
+										<li class="project_item mobile">
 											<a class="item project_card" href="project/2/index.html" aria-label="Matima App project details" data-aos="fade-up" data-aos-delay="0">
 												<figure class="project_card__media" data-device="mobile">
 													<div class="project_card__device">
@@ -346,7 +359,7 @@
 												</div>
 											</a>
 										</li>
-										<li>
+										<li class="project_item web">
 											<a class="item project_card" href="project/8/index.html" aria-label="Cablin project details" data-aos="fade-up" data-aos-delay="120">
 												<figure class="project_card__media" data-device="desktop">
 													<div class="project_card__device">
@@ -364,7 +377,7 @@
 												</div>
 											</a>
 										</li>
-										<li>
+										<li class="project_item desktop">
 											<a class="item project_card" href="project/6/index.html" aria-label="Excel Invoicing Tool project details" data-aos="fade-up" data-aos-delay="240">
 												<figure class="project_card__media" data-device="desktop">
 													<div class="project_card__device">
@@ -406,7 +419,7 @@
 									</div>
 									<div class="item_right">
 										<p>Core Stack</p>
-										<h3>Flutter · Dart</h3>
+										<h3 class="skill_icons_heading"><span class="iconify" data-icon="logos:flutter" aria-hidden="true"></span><span class="iconify" data-icon="logos:dart" aria-hidden="true"></span>Flutter · Dart</h3>
 									</div>
 								</div>
 							</li>
@@ -418,7 +431,7 @@
 									</div>
 									<div class="item_right">
 										<p>Core Tools</p>
-										<h3>Figma · Flutter</h3>
+										<h3 class="skill_icons_heading"><span class="iconify" data-icon="logos:figma" aria-hidden="true"></span><span class="iconify" data-icon="logos:flutter" aria-hidden="true"></span>Figma · Flutter</h3>
 									</div>
 								</div>
 							</li>
@@ -430,7 +443,7 @@
 									</div>
 									<div class="item_right">
 										<p>Focus Areas</p>
-										<h3>Planning → Stores</h3>
+										<h3 class="skill_icons_heading"><span class="iconify" data-icon="mdi:chart-timeline-variant" style="color:var(--mc)" aria-hidden="true"></span><span class="iconify" data-icon="mdi:rocket-launch" style="color:var(--accent-strong)" aria-hidden="true"></span>Planning → Stores</h3>
 									</div>
 								</div>
 							</li>
@@ -442,7 +455,7 @@
 									</div>
 									<div class="item_right">
 										<p>Hardware Stack</p>
-										<h3>Arduino · BLE</h3>
+										<h3 class="skill_icons_heading"><span class="iconify" data-icon="logos:arduino" aria-hidden="true"></span><span class="iconify" data-icon="mdi:bluetooth" style="color:#0082FC" aria-hidden="true"></span>Arduino · BLE</h3>
 									</div>
 								</div>
 							</li>
@@ -529,21 +542,26 @@
 						<div class="items">
 							<div class="item half">
 								<div class="input_wrapper">
-									<input id="name" type="text" name="name" placeholder="Name" autocomplete="off" />
+									<input id="name" type="text" name="name" placeholder="Name" autocomplete="off" required />
 								</div>
 							</div>
 							<div class="item half">
 								<div class="input_wrapper">
-									<input id="subject" type="text" name="subject" placeholder="Subject" autocomplete="off" />
+									<input id="email" type="email" name="email" placeholder="Email" autocomplete="off" required />
 								</div>
 							</div>
 							<div class="item">
 								<div class="input_wrapper">
-									<textarea id="message" name="message" placeholder="Message"></textarea>
+									<input id="subject" type="text" name="subject" placeholder="Subject" autocomplete="off" required />
 								</div>
 							</div>
 							<div class="item">
-								<a id="send_message" href="#">Send Message</a>
+								<div class="input_wrapper">
+									<textarea id="message" name="message" placeholder="Message" required></textarea>
+								</div>
+							</div>
+							<div class="item">
+								<button id="send_message" type="submit" class="contact_submit_btn">Send Message</button>
 							</div>
 						</div>
 						<div class="empty_notice"><span>Please fill in required fields.</span></div>
