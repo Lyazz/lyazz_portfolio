@@ -55,17 +55,21 @@ FrenifyDeebo.projectFilter();
 			
 			
 		projectFilter: function() {
-			var $grid = .isotope({
+			var grid = $('.projects__stories ul');
+			if(!grid.length){ return; }
+
+			var $grid = grid.isotope({
 				itemSelector: '.project_item',
 				layoutMode: 'fitRows'
 			});
 
-			.on('click', '.filter_link', function(e) {
+			$('.projects_filter').on('click', '.filter_link', function(e) {
 				e.preventDefault();
-				var filterValue = .attr('data-filter');
+				var element = $(this);
+				var filterValue = element.attr('data-filter');
 				$grid.isotope({ filter: filterValue });
-				.removeClass('active');
-				.addClass('active');
+				$('.projects_filter .filter_link').removeClass('active');
+				element.addClass('active');
 				setTimeout(function() { AOS.refresh(); }, 500);
 			});
 		},
