@@ -1958,6 +1958,15 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 		position: relative;
 		height: inherit;
 	}
+	
+	.fn_cs_progress_bar .progress_title{
+		font-size: 14px;
+		padding: 0 15px;
+	}
+	.fn_cs_progress_bar .progress_percent{
+		font-size: 13px;
+		padding: 0 15px;
+	}
 }
 
 
