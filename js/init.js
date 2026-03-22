@@ -260,14 +260,26 @@ scrollProgress: function(){
 		
 		progress: function(){
 			var content = $('.deebo_fn__cv .cv__content');
-			if($(window).width() <= 768){
-				content = $('.deebo_fn__cv');
-			}
-			content.on('resize scroll', function() {
-				if ($('.deebo_fn__cv .fn_cs_progress_bar').DeeboProgressIsInViewport(content) < 0) {
-					FrenifyDeebo.progressF($('.deebo_fn__cv .fn_cs_progress_bar'));
+			var win = $(window);
+			
+			var triggerProgress = function() {
+				var target = $('.deebo_fn__cv .fn_cs_progress_bar');
+				if(!target.length) return;
+				
+				var viewportHeight = win.width() <= 1040 ? win.height() : content.outerHeight();
+				var scrollOffset = win.scrollTop();
+				
+				if (target.offset().top - scrollOffset - viewportHeight < 0) {
+					FrenifyDeebo.progressF(target);
 				}
-			});
+			};
+
+			content.on('resize scroll', triggerProgress);
+			win.on('resize scroll', triggerProgress);
+			
+			// Trigger once on init
+			setTimeout(triggerProgress, 500);
+			setTimeout(triggerProgress, 2000);
 		},
 		
 		progressF: function(container){
