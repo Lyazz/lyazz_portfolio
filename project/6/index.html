@@ -8,14 +8,18 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="../../css/project.css" />
+	<link type="text/css" rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 <body class="project-page">
+
+	<div class="cv__bg"></div>
+	<div class="cv__bg2"></div>
 
 	<div class="scroll_progress" aria-hidden="true">
 		<span class="scroll_progress__bar"></span>
 	</div>
 
-	<header class="project__hero">
+	<header class="project__hero" data-aos="fade-up" data-aos-duration="1200">
 		<a class="project__back" href="../../index.html">← Back to portfolio</a>
 		<h1>Weekly Activity Manager</h1>
 		<p class="project__subtitle">
@@ -23,13 +27,13 @@
 		</p>
 		<ul class="project__meta">
 			<li><strong>Role:</strong> Product Engineer</li>
-			<li><strong>Platform:</strong> Windows &amp; macOS Desktop</li>
-			<li><strong>Timeline:</strong> 2024 — 2025</li>
+			<li data-aos="fade-up" data-aos-duration="1200"><strong>Platform:</strong> Windows &amp; macOS Desktop</li>
+			<li data-aos="fade-up" data-aos-duration="1200"><strong>Timeline:</strong> 2024 — 2025</li>
 		</ul>
 	</header>
 
 	<main class="project__content">
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Overview</h2>
 			<p>
 				The Weekly Activity Manager streamlines how engineering firms manage and evaluate their weekly operations.
@@ -37,27 +41,27 @@
 			</p>
 		</section>
 
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Key Features</h2>
 			<ul>
 				<li>Separate weekly report templates for technical and administrative personnel.</li>
-				<li>Automated synthesis generation by employee (for HR review) and by project (for monthly invoicing by task and role).</li>
-				<li>Centralized dashboard to track submissions, hours worked, and project-level activity.</li>
-				<li>Smart validation detecting missing data, inconsistencies, and duplicates before synthesis.</li>
-				<li>One-click export of curated synthesis files ready for accounting and HR analysis.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Automated synthesis generation by employee (for HR review) and by project (for monthly invoicing by task and role).</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Centralized dashboard to track submissions, hours worked, and project-level activity.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Smart validation detecting missing data, inconsistencies, and duplicates before synthesis.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">One-click export of curated synthesis files ready for accounting and HR analysis.</li>
 			</ul>
 		</section>
 
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Tech Stack</h2>
 			<ul>
 				<li>Flutter &amp; Dart with modern desktop UI components.</li>
-				<li>Local database powered by SQLite (sqflite_ffi) for secure offline storage.</li>
-				<li>Excel import/export via the <code>excel</code> package.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Local database powered by SQLite (sqflite_ffi) for secure offline storage.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Excel import/export via the <code>excel</code> package.</li>
 			</ul>
 		</section>
 
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Operator Experience</h2>
 			<p>
 				Employees complete structured weekly reports at the start of each week, depending on their role.
@@ -65,20 +69,20 @@
 			</p>
 		</section>
 
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Outcomes</h2>
 			<ul>
 				<li>Replaced manual Excel consolidation with automated, validated syntheses.</li>
-				<li>Improved transparency and accuracy in project billing by role and task.</li>
-				<li>Enhanced employee performance tracking through unified weekly reporting.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Improved transparency and accuracy in project billing by role and task.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Enhanced employee performance tracking through unified weekly reporting.</li>
 			</ul>
 		</section>
 
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Gallery</h2>
 			<div class="project__gallery" data-gallery>
 				<div class="project__gallery-track">
-					<figure>
+					<figure data-aos="fade-up" data-aos-duration="1200">
 						<img src="../../img/projects/activity_manager/dashboard.jpg" alt="Weekly Activity Manager dashboard" loading="lazy" decoding="async" />
 						<figcaption>Manager dashboard consolidating reports by project and employee.</figcaption>
 					</figure>
@@ -94,10 +98,10 @@
 			</div>
 		</section>
 
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Links</h2>
 			<ul class="project__links">
-				<li><span>Status:</span> Internal application for an engineering consultancy</li>
+				<li data-aos="fade-up" data-aos-duration="1200"><span>Status:</span> Internal application for an engineering consultancy</li>
 			</ul>
 		</section>
 	</main>
@@ -107,5 +111,6 @@
 	</footer>
 	<script src="../../js/project-enhance.js"></script>
 	<script src="../../js/project-gallery.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 </body>
 </html>

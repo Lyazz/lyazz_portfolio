@@ -8,60 +8,64 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="../../css/project.css" />
+	<link type="text/css" rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 <body class="project-page">
+
+	<div class="cv__bg"></div>
+	<div class="cv__bg2"></div>
 
 	<div class="scroll_progress" aria-hidden="true">
 		<span class="scroll_progress__bar"></span>
 	</div>
 
-	<header class="project__hero">
+	<header class="project__hero" data-aos="fade-up" data-aos-duration="1200">
 		<a class="project__back" href="../../index.html">← Back to portfolio</a>
 		<h1>NexSync POS</h1>
 		<p class="project__subtitle">Cross-platform point-of-sale with real-time analytics and AI-assisted inventory forecasting.</p>
 		<ul class="project__meta">
 			<li><strong>Role:</strong> Lead Mobile &amp; Backend Developer</li>
-			<li><strong>Platform:</strong> Desktop, Android, iOS</li>
-			<li><strong>Timeline:</strong> 2023 — Present</li>
+			<li data-aos="fade-up" data-aos-duration="1200"><strong>Platform:</strong> Desktop, Android, iOS</li>
+			<li data-aos="fade-up" data-aos-duration="1200"><strong>Timeline:</strong> 2023 — Present</li>
 		</ul>
 	</header>
 
 	<main class="project__content">
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Overview</h2>
 			<p>NexSync POS delivers a unified sales and inventory experience across retail locations. It keeps cashiers productive with responsive Flutter interfaces while synchronizing orders, stock levels, and customer insights in real time. AI-driven forecasting highlights reorder points before shelves run low, and the solution scales from single stores to franchise operations.</p>
 		</section>
 
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Key Features</h2>
 			<ul>
 				<li>Live dashboards for multi-location sales, revenue, and staff performance.</li>
-				<li>Offline-first checkout that syncs instantly when connectivity returns.</li>
-				<li>Automated inventory alerts with TensorFlow-powered demand forecasting.</li>
-				<li>Role-based access for managers, accountants, and warehouse teams.</li>
-				<li>Receipt printing, barcode scanning, and customer loyalty integration.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Offline-first checkout that syncs instantly when connectivity returns.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Automated inventory alerts with TensorFlow-powered demand forecasting.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Role-based access for managers, accountants, and warehouse teams.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Receipt printing, barcode scanning, and customer loyalty integration.</li>
 			</ul>
 		</section>
 
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Tech Stack</h2>
 			<ul>
 				<li>Flutter, Dart, Provider, and custom design system components.</li>
-				<li>Socket.io for real-time synchronization between devices.</li>
-				<li>SQLite offline cache with MySQL and Firebase Cloud Firestore backends.</li>
-				<li>TensorFlow models estimating stock turnover and suggested purchase orders.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Socket.io for real-time synchronization between devices.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">SQLite offline cache with MySQL and Firebase Cloud Firestore backends.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">TensorFlow models estimating stock turnover and suggested purchase orders.</li>
 			</ul>
 		</section>
 
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Gallery</h2>
 			<div class="project__gallery" data-gallery>
 				<div class="project__gallery-track">
-					<figure>
+					<figure data-aos="fade-up" data-aos-duration="1200">
 						<img src="../../img/projects/nexsync_pos/dashboard.jpg" alt="NexSync POS dashboard overview" loading="lazy" decoding="async" />
 						<figcaption>Dashboard snapshot summarizes daily revenue, orders, and top-selling items.</figcaption>
 					</figure>
-					<figure>
+					<figure data-aos="fade-up" data-aos-duration="1200">
 						<img src="../../img/projects/nexsync_pos/point-of-sale-screen.jpg" alt="NexSync POS point-of-sale checkout screen" loading="lazy" decoding="async" />
 						<figcaption>Point-of-sale screen keeps scanning, discounts, and payments in a single view.</figcaption>
 					</figure>
@@ -76,20 +80,20 @@
 			</div>
 		</section>
 
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Outcomes</h2>
 			<ul>
 				<li>Reduced stockouts by giving managers seven-day AI reorder projections.</li>
-				<li>Improved cashier onboarding with a guided setup that mirrors hardware layouts.</li>
-				<li>Enabled franchise owners to review performance from any device in under a minute.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Improved cashier onboarding with a guided setup that mirrors hardware layouts.</li>
+				<li data-aos="fade-up" data-aos-duration="1200">Enabled franchise owners to review performance from any device in under a minute.</li>
 			</ul>
 		</section>
 
-		<section>
+		<section data-aos="fade-up" data-aos-duration="1200">
 			<h2>Links</h2>
 			<ul class="project__links">
-				<li><a href="mailto:yazidaitallala@hotmail.com?subject=NexSync%20POS%20Demo%20Request">Request a demo</a></li>
-				<li><span>GitHub:</span> Private repository (available upon request)</li>
+				<li data-aos="fade-up" data-aos-duration="1200"><a href="mailto:yazidaitallala@hotmail.com?subject=NexSync%20POS%20Demo%20Request">Request a demo</a></li>
+				<li data-aos="fade-up" data-aos-duration="1200"><span>GitHub:</span> Private repository (available upon request)</li>
 			</ul>
 		</section>
 	</main>
@@ -99,5 +103,6 @@
 	</footer>
 	<script src="../../js/project-enhance.js"></script>
 	<script src="../../js/project-gallery.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 </body>
 </html>

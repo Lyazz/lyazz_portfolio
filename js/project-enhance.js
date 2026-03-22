@@ -42,8 +42,16 @@
 	}
 
 	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', initScrollProgress);
+		document.addEventListener('DOMContentLoaded', function() {
+			initScrollProgress();
+			if (typeof AOS !== 'undefined') {
+				AOS.init({ duration: 1200, once: true });
+			}
+		});
 	} else {
 		initScrollProgress();
+		if (typeof AOS !== 'undefined') {
+			AOS.init({ duration: 1200, once: true });
+		}
 	}
 })();

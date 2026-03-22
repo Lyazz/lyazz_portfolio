@@ -519,7 +519,6 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	float: left;
 	clear: both;
 	color: var(--surface-text);
-	backdrop-filter: blur(6px);
 	transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 .deebo_fn__cv .cv__content section:last-child{
@@ -808,8 +807,6 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	box-shadow: 0 20px 60px -30px rgba(0,0,0,0.6);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
 }
 .fn_cs_info_items span{
 	font-weight: 500;
@@ -904,8 +901,6 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	box-shadow: 0 20px 60px -30px rgba(0,0,0,0.6);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
 	transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
 }
 .fn_cs_boxed_list .item:after{
@@ -1010,7 +1005,7 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 .projects__stories .fn_cs_boxed_list ul{
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
-	gap: 32px;
+	gap: 64px;
 }
 .section_projects .fn_cs_boxed_list li{
 	margin-bottom: 0;
@@ -1027,8 +1022,6 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	cursor: pointer;
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
 	transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; /* Ensure transitions aren't causing pops */
 }
 .section_projects .fn_cs_boxed_list .item:after{
@@ -1295,8 +1288,6 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
 }
 .fn_cs_service_list .item:hover{
 	transform: translateY(-4px);
@@ -1394,8 +1385,6 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
 }
 .fn_cs_testimonials .item:hover{
 	transform: translateY(-4px);
