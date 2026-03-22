@@ -24,7 +24,8 @@ $.fn.DeeboProgressIsInViewport = function(content) {
 				FrenifyDeebo.anchor();
 				FrenifyDeebo.aos();
 				FrenifyDeebo.scrollProgress();
-FrenifyDeebo.projectFilter();
+				FrenifyDeebo.projectFilter();
+				FrenifyDeebo.scrollAvatar();
 			},
 			
 			aos: function(){
@@ -128,6 +129,55 @@ scrollProgress: function(){
 				window.addEventListener('resize', onScroll);
 			},
 
+		scrollAvatar: function() {
+			var avatars = document.querySelectorAll('.avatar_img');
+			if (!avatars.length) return;
+			
+			// Map sections to the specific avatar data-section we want to show
+			var sectionImageMap = {
+				'hero-header': 'hero-header',
+				'cv_experience': 'cv_experience',
+				'cv_education': 'cv_experience', // Keep the second photo for education too
+				'cv_skills': 'cv_skills',
+				'cv_services': 'cv_skills',
+				'cv_projects': 'cv_skills',
+				'cv_testimonials': 'cv_skills',
+				'contact': 'cv_skills'
+			};
+
+			var observerOptions = {
+				root: document.querySelector('.cv__content'),
+				rootMargin: '-20% 0px -40% 0px', // Trigger when section comes nicely into view
+				threshold: 0
+			};
+			
+			if (window.innerWidth <= 1040) {
+				observerOptions.root = null; // Use viewport for mobile
+			}
+			
+			var observer = new IntersectionObserver(function(entries) {
+				entries.forEach(function(entry) {
+					if (entry.isIntersecting) {
+						var sectionId = entry.target.id;
+						var mappedSection = sectionImageMap[sectionId] || 'hero-header';
+						
+						var targetAvatar = document.querySelector('.avatar_img[data-section="' + mappedSection + '"]');
+						if (targetAvatar && !targetAvatar.classList.contains('active')) {
+							avatars.forEach(function(img) {
+								img.classList.remove('active');
+							});
+							targetAvatar.classList.add('active');
+						}
+					}
+				});
+			}, observerOptions);
+			
+			Object.keys(sectionImageMap).forEach(function(id) {
+				var el = document.getElementById(id);
+				if(el) observer.observe(el);
+			});
+		},
+
 		
 		anchor: function(){
 
@@ -155,47 +205,49 @@ scrollProgress: function(){
 				e.preventDefault();
 				if(isSending){ return false; }
 				var form		= $('.section_contact .contact_form');
-				var name 		= $("#name").val().trim();
-				var subject 	= $("#subject").val().trim();
-				var message 	= $("#message").val().trim();
-				var spanSuccess	= form.find(".success");
-				var success     = spanSuccess.data('success');
-				var emptyNotice = form.find(".empty_notice");
-				var emptyNoticeText = emptyNotice.find("span");
+			var name 		= $("#name").val().trim();
+			var email 		= $("#email").val().trim();
+			var subject 	= $("#subject").val().trim();
+			var message 	= $("#message").val().trim();
+			var spanSuccess	= form.find(".success");
+			var success     = spanSuccess.data('success');
+			var emptyNotice = form.find(".empty_notice");
+			var emptyNoticeText = emptyNotice.find("span");
 
-				spanSuccess.empty();
-				if(name === ''|| subject === ''|| message === ''){
-					emptyNoticeText.text('Please fill in required fields.');
-					emptyNotice.slideDown(500).delay(2000).slideUp(500);
-					return false;
-				}
+			spanSuccess.empty();
+			if(name === '' || email === '' || subject === '' || message === ''){
+				emptyNoticeText.text('Please fill in required fields.');
+				emptyNotice.slideDown(500).delay(2000).slideUp(500);
+				return false;
+			}
 
-				isSending = true;
-				sendButton.addClass('is-loading').text('Sending...');
-				emptyNotice.hide();
+			isSending = true;
+			sendButton.addClass('is-loading').text('Sending...');
+			emptyNotice.hide();
 
-				fetch(form.attr('action') || '/api/contact', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({
-						name: name,
-						subject: subject,
-						message: message
-					})
-				}).then(function(response){
-					if(!response.ok){ throw new Error('Request failed'); }
-					spanSuccess.append("<span class='contact_success'>" + success + "</span>");
-					spanSuccess.slideDown(500).delay(4000).slideUp(500);
-					if(form.length){ form[0].reset(); }
-				}).catch(function(){
-					emptyNoticeText.text('Unable to send message. Please try again.');
-					emptyNotice.slideDown(500).delay(3000).slideUp(500);
-				}).finally(function(){
-					isSending = false;
-					sendButton.removeClass('is-loading').text(sendLabel);
-				});
+			fetch(form.attr('action') || '/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					name: name,
+					email: email,
+					subject: subject,
+					message: message
+				})
+			}).then(function(response){
+				if(!response.ok){ throw new Error('Request failed'); }
+				spanSuccess.append("<span class='contact_success'>" + success + "</span>");
+				spanSuccess.slideDown(500).delay(4000).slideUp(500);
+				if(form.length){ form[0].reset(); }
+			}).catch(function(){
+				emptyNoticeText.text('Unable to send message. Please try again.');
+				emptyNotice.slideDown(500).delay(3000).slideUp(500);
+			}).finally(function(){
+				isSending = false;
+				sendButton.removeClass('is-loading').text(sendLabel);
+			});
 				return false; 
 			});
 		},
