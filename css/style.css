@@ -797,17 +797,19 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	gap: 12px;
 }
 .fn_cs_info_items li{
-	background: linear-gradient(135deg, rgba(26, 23, 41, 0.35), rgba(12, 11, 22, 0.2));
+	background: linear-gradient(155deg, rgba(60, 56, 88, 0.4), rgba(35, 32, 54, 0.6));
 	padding: 12px 16px;
 	line-height: 1.6;
 	margin: 0;
 	font-size: 18px;
 	border-radius: 12px;
-	border: 1px solid rgba(255, 255, 255, 0.08);
+	border: 1px solid var(--surface-border);
 	text-align: left;
-	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
+	box-shadow: 0 20px 60px -30px rgba(0,0,0,0.6);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 .fn_cs_info_items span{
 	font-weight: 500;
@@ -894,15 +896,17 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	width: 100%;
 	float: left;
 	clear: both;
-	background: linear-gradient(145deg, rgba(25, 22, 41, 0.35), rgba(10, 10, 18, 0.2));
+	background: linear-gradient(155deg, rgba(60, 56, 88, 0.4), rgba(35, 32, 54, 0.6));
 	position: relative;
 	padding: 42px 40px 43px;
 	border-radius: 18px;
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
-	transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background .35s ease;
+	border: 1px solid var(--surface-border);
+	box-shadow: 0 20px 60px -30px rgba(0,0,0,0.6);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
 }
 .fn_cs_boxed_list .item:after{
 	content: '';
@@ -917,7 +921,7 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 }
 .fn_cs_boxed_list .item:hover{
 	transform: translateY(-6px);
-	box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 24px 64px -26px rgba(0,0,0,0.65);
 	border-color: rgba(143, 118, 251, 0.35);
 }
 .fn_cs_boxed_list .item_top{
@@ -1013,16 +1017,19 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 }
 .section_projects .fn_cs_boxed_list .item{
 	padding: 0;
-	background: linear-gradient(160deg, rgba(60, 56, 88, 0.35), rgba(35, 32, 54, 0.2));
-	border: 1px solid rgba(255, 255, 255, 0.08); /* replacing var(--surface-border) with glassy equivalent */
+	background: linear-gradient(155deg, rgba(60, 56, 88, 0.4), rgba(35, 32, 54, 0.6));
+	border: 1px solid var(--surface-border);
 	border-radius: 28px;
-	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* replacing var(--card-shadow) with glassy shadow */
+	box-shadow: 0 20px 60px -30px rgba(0,0,0,0.6);
 	overflow: hidden;
 	text-decoration: none;
 	color: inherit;
 	cursor: pointer;
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; /* Ensure transitions aren't causing pops */
 }
 .section_projects .fn_cs_boxed_list .item:after{
 	height: 6px;
@@ -1035,7 +1042,7 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 .section_projects .fn_cs_boxed_list .item:hover,
 .section_projects .fn_cs_boxed_list .item:focus-visible{
 	transform: translateY(-8px);
-	box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 24px 64px -26px rgba(0,0,0,0.65);
 }
 .section_projects .fn_cs_boxed_list p a{
 	color: rgba(203, 186, 255, 0.9);
@@ -1281,17 +1288,19 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	background: linear-gradient(145deg, rgba(25, 22, 41, 0.35), rgba(10, 10, 18, 0.2));
+	background: linear-gradient(155deg, rgba(60, 56, 88, 0.4), rgba(35, 32, 54, 0.6));
 	border-radius: 16px;
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-	transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background .35s ease;
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid var(--surface-border);
+	box-shadow: 0 20px 60px -30px rgba(0,0,0,0.6);
+	transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 .fn_cs_service_list .item:hover{
 	transform: translateY(-4px);
-	box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 24px 64px -26px rgba(0,0,0,0.65);
 	border-color: rgba(143, 118, 251, 0.3);
 }
 .fn_cs_service_list .item_right{
@@ -1378,17 +1387,19 @@ body.resume-opened .deebo_fn__cv .cv__bg2{
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	background: linear-gradient(145deg, rgba(25, 22, 41, 0.35), rgba(10, 10, 18, 0.2));
+	background: linear-gradient(155deg, rgba(60, 56, 88, 0.4), rgba(35, 32, 54, 0.6));
 	border-radius: 16px;
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-	transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background .35s ease;
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid var(--surface-border);
+	box-shadow: 0 20px 60px -30px rgba(0,0,0,0.6);
+	transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 .fn_cs_testimonials .item:hover{
 	transform: translateY(-4px);
-	box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 24px 64px -26px rgba(0,0,0,0.65);
 	border-color: rgba(143, 118, 251, 0.3);
 }
 .fn_cs_testimonials .item_right{
