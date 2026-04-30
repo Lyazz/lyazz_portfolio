@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 	<meta name="description" content="Portfolio of Yazid AITALLALA, software developer specializing in cross-platform mobile, web, and IoT experiences." />
 	<meta name="author" content="Yazid AITALLALA" />
-	<meta name="theme-color" content="#0a0a14" />
+	<meta name="theme-color" content="#0d0d18" />
 
 	<meta property="og:title" content="Yazid AITALLALA — Software Developer" />
 	<meta property="og:description" content="Cross-platform mobile, web & IoT developer with 5+ years building production-grade products." />
@@ -20,12 +20,12 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-	<link rel="stylesheet" href="css/base.css?ver=2026" />
-	<link rel="stylesheet" href="css/style.css?ver=2026" />
+	<link rel="stylesheet" href="css/base.css?ver=2026b" />
+	<link rel="stylesheet" href="css/style.css?ver=2026b" />
 
-	<script src="js/theme.js?ver=2026"></script>
+	<script src="js/theme.js?ver=2026b"></script>
 </head>
 
 <body>
@@ -37,17 +37,6 @@
 		<div class="blob blob--3"></div>
 	</div>
 
-	<!-- SVG defs for dial gradient -->
-	<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-		<defs>
-			<linearGradient id="dial-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-				<stop offset="0%"   stop-color="#7c5cff"/>
-				<stop offset="50%"  stop-color="#ff3df0"/>
-				<stop offset="100%" stop-color="#00e5ff"/>
-			</linearGradient>
-		</defs>
-	</svg>
-
 	<!-- Scroll progress -->
 	<div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__bar"></span></div>
 
@@ -55,28 +44,22 @@
 	<header class="nav">
 		<div class="container nav__inner">
 			<a href="#hero" class="nav__logo" aria-label="Home">
-				<span class="mono">Y</span>
-				<span>Yazid AITALLALA</span>
+				<span>Yazid AITALLALA</span><span class="dot-accent">.</span>
 			</a>
 
 			<nav class="nav__links" aria-label="Primary">
-				<a class="nav__link" href="#work">Work</a>
+				<a class="nav__link is-active" href="#hero">Home</a>
+				<a class="nav__link" href="#about">About</a>
 				<a class="nav__link" href="#experience">Experience</a>
-				<a class="nav__link" href="#skills">Skills</a>
-				<a class="nav__link" href="#services">Services</a>
-				<a class="nav__link" href="#contact">Contact</a>
+				<a class="nav__link" href="#projects">Projects</a>
+				<a class="nav__link" href="#contact">Contacts</a>
 			</nav>
 
 			<div class="nav__actions">
-				<span class="nav__status"><span class="dot"></span>Available for work</span>
 				<button class="theme-toggle" aria-label="Toggle theme" type="button">
 					<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 					<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
 				</button>
-				<a class="btn-cv" href="docs/yazid-aitallala-cv.pdf" download>
-					<span class="iconify" data-icon="mdi:download" aria-hidden="true"></span>
-					<span>CV</span>
-				</a>
 				<button class="nav__burger" aria-label="Menu" type="button"><span></span><span></span><span></span></button>
 			</div>
 		</div>
@@ -84,161 +67,134 @@
 
 	<!-- Mobile menu -->
 	<div class="nav__mobile" aria-hidden="true">
-		<a href="#work">Work</a>
+		<a href="#hero">Home</a>
+		<a href="#about">About</a>
 		<a href="#experience">Experience</a>
-		<a href="#skills">Skills</a>
-		<a href="#services">Services</a>
-		<a href="#contact">Contact</a>
+		<a href="#projects">Projects</a>
+		<a href="#contact">Contacts</a>
 	</div>
 
 	<main>
 
 		<!-- HERO -->
 		<section class="hero" id="hero">
-			<div class="hero__inner">
-				<span class="hero__eyebrow"><span class="pulse"></span>Software developer · Algiers, Algeria</span>
+			<div class="hero__grid">
 
-				<h1 class="hero__title">
-					<span class="word"><span data-split>Crafting</span></span>
-					<br/>
-					<span class="word"><span data-split data-delay="0.3" class="accent">digital</span></span>
-					<span class="word"><span data-split data-delay="0.5">products</span></span>
-				</h1>
-
-				<div class="hero__subgrid">
-					<div class="hero__roles">
-						<span class="label">I'm a</span>
-						<span class="role-flip">
-							<span class="role-flip__list">
-								<span class="role-flip__item"><span class="gradient-text">Mobile App Developer</span></span>
-								<span class="role-flip__item"><span class="gradient-text">Flutter Enthusiast</span></span>
-								<span class="role-flip__item"><span class="gradient-text">Full Stack Developer</span></span>
-								<span class="role-flip__item"><span class="gradient-text">Mobile App Developer</span></span>
-							</span>
-						</span>
+				<div class="hero__left">
+					<div class="hero__hello">Hello<span class="dot-accent">.</span></div>
+					<div class="hero__intro">
+						<span class="hero__line"></span>
+						<span>I'm <strong style="font-weight:600;">Yazid</strong></span>
 					</div>
-
+					<h1 class="hero__role"><span class="role-flip"><span class="role-flip__inner">Software Developer</span></span></h1>
+					<p class="hero__lead">Cross-platform mobile, web &amp; IoT developer with 5+ years shipping production-grade products from Algiers to the world.</p>
 					<div class="hero__cta">
-						<a class="btn btn--primary" href="#work" data-magnetic><span>View work</span><span class="arrow">→</span></a>
-						<a class="btn btn--ghost" href="#contact" data-magnetic><span>Let's talk</span></a>
+						<a class="btn btn--primary" href="#contact"><span>Got a project?</span></a>
+						<a class="btn btn--ghost" href="docs/yazid-aitallala-cv.pdf" download><span>My resume</span><span class="arrow">↓</span></a>
 					</div>
 				</div>
+
+				<div class="hero__portrait">
+					<div class="portrait__ring portrait__ring--3"></div>
+					<div class="portrait__ring portrait__ring--2"></div>
+					<div class="portrait__ring"></div>
+					<div class="portrait__glow"></div>
+					<div class="portrait__img" style="background-image: url('img/header/1.jpg');"></div>
+					<span class="portrait__chev portrait__chev--l">&lt;</span>
+					<span class="portrait__chev portrait__chev--r">&gt;</span>
+
+					<div class="portrait__bubble portrait__bubble--1">
+						<span class="iconify" data-icon="logos:flutter"></span>
+						<span>Flutter expert</span>
+					</div>
+					<div class="portrait__bubble portrait__bubble--2">
+						<span class="iconify" data-icon="logos:vue"></span>
+						<span>Vue / Nuxt</span>
+					</div>
+					<div class="portrait__bubble portrait__bubble--3">
+						<span class="iconify" data-icon="mdi:rocket-launch" style="color:var(--accent);"></span>
+						<span>5+ years</span>
+					</div>
+				</div>
+
 			</div>
-
-			<div class="hero__chip hero__chip--1"><span class="iconify" data-icon="logos:flutter" aria-hidden="true"></span>5+ years Flutter</div>
-			<div class="hero__chip hero__chip--2"><span class="iconify" data-icon="mdi:rocket-launch" style="color:var(--accent-3)" aria-hidden="true"></span>Shipped to Play & App Store</div>
-			<div class="hero__chip hero__chip--3"><span class="iconify" data-icon="logos:arduino" aria-hidden="true"></span>IoT &amp; Hardware</div>
-
-			<a class="hero__scroll" href="#marquee" aria-label="Scroll down">
-				<span>scroll</span>
-				<span class="line"></span>
-			</a>
 		</section>
 
-		<!-- MARQUEE -->
-		<div class="marquee" id="marquee" aria-hidden="true">
-			<div class="marquee__track">
-				<span class="marquee__item">Flutter <span class="dot"></span></span>
-				<span class="marquee__item">Dart <span class="dot"></span></span>
-				<span class="marquee__item">Vue 3 <span class="dot"></span></span>
-				<span class="marquee__item">Nuxt <span class="dot"></span></span>
-				<span class="marquee__item">Supabase <span class="dot"></span></span>
-				<span class="marquee__item">Firebase <span class="dot"></span></span>
-				<span class="marquee__item">Arduino <span class="dot"></span></span>
-				<span class="marquee__item">Figma <span class="dot"></span></span>
-				<span class="marquee__item">Express <span class="dot"></span></span>
-				<span class="marquee__item">PostgreSQL <span class="dot"></span></span>
-				<span class="marquee__item">PHP <span class="dot"></span></span>
-				<span class="marquee__item">Python <span class="dot"></span></span>
+		<!-- SKILLS STRIP -->
+		<div class="skills-strip" aria-hidden="true">
+			<div class="skills-strip__track">
+				<span class="skills-strip__item">Flutter</span>
+				<span class="skills-strip__item">Dart</span>
+				<span class="skills-strip__item">Vue 3</span>
+				<span class="skills-strip__item">Nuxt</span>
+				<span class="skills-strip__item">JavaScript</span>
+				<span class="skills-strip__item">TypeScript</span>
+				<span class="skills-strip__item">Node.js</span>
+				<span class="skills-strip__item">Firebase</span>
+				<span class="skills-strip__item">Supabase</span>
+				<span class="skills-strip__item">PostgreSQL</span>
+				<span class="skills-strip__item">Arduino</span>
+				<span class="skills-strip__item">Figma</span>
+				<span class="skills-strip__item">Git</span>
 			</div>
 		</div>
 
-		<!-- WORK / PROJECTS -->
-		<section class="section" id="work">
+		<!-- ABOUT -->
+		<section class="section" id="about">
 			<div class="container">
-				<div class="section__head reveal">
-					<div>
-						<span class="eyebrow">01 — Selected work</span>
-						<h2 class="section__title">Recent <span class="display gradient-text">builds</span></h2>
+				<div class="about__grid">
+					<div class="services-list reveal">
+						<div class="service-item">
+							<div class="service-item__icon"><span class="iconify" data-icon="mdi:cellphone-link"></span></div>
+							<div class="service-item__text">
+								<h4>Cross-Platform App Development</h4>
+								<p>Mobile, desktop &amp; web from one codebase</p>
+							</div>
+						</div>
+						<div class="service-item">
+							<div class="service-item__icon"><span class="iconify" data-icon="mdi:palette-swatch-outline"></span></div>
+							<div class="service-item__text">
+								<h4>Mobile UI/UX Design</h4>
+								<p>Intuitive flows &amp; design systems</p>
+							</div>
+						</div>
+						<div class="service-item">
+							<div class="service-item__icon"><span class="iconify" data-icon="mdi:chip"></span></div>
+							<div class="service-item__text">
+								<h4>IoT &amp; Hardware</h4>
+								<p>Arduino, BLE, custom PCB &amp; 3D-print</p>
+							</div>
+						</div>
+						<div class="service-item">
+							<div class="service-item__icon"><span class="iconify" data-icon="mdi:cloud-outline"></span></div>
+							<div class="service-item__text">
+								<h4>Backend &amp; Cloud</h4>
+								<p>Firebase, Supabase, Postgres &amp; Express</p>
+							</div>
+						</div>
 					</div>
-					<p class="section__lead">Thoughtful UX, resilient architecture, measurable outcomes — across mobile, web, desktop, and connected platforms.</p>
-				</div>
 
-				<div class="projects__filter reveal">
-					<button class="filter__btn is-active" data-filter="*">All</button>
-					<button class="filter__btn" data-filter="mobile">Mobile</button>
-					<button class="filter__btn" data-filter="web">Web</button>
-					<button class="filter__btn" data-filter="desktop">Desktop</button>
-				</div>
+					<div class="about__text reveal">
+						<span class="eyebrow" style="margin-bottom: 16px;">About me</span>
+						<h2>Building from idea <span class="dot-accent">to</span> store shelf</h2>
+						<p>I started my software journey from a curiosity for how apps move pixels into people's hands. Five years later, I lead end-to-end product builds — architecture, UX, code, deployment — across mobile, web and connected hardware.</p>
+						<p>I'm currently founder &amp; lead developer of <strong style="color:var(--fg)">Swekly</strong>, a multi-tenant SaaS serving hundreds of Algerian merchants.</p>
 
-				<div class="projects__grid">
-
-					<a class="project reveal" data-cat="web mobile desktop" href="project/7/index.html" data-tilt="6">
-						<div class="project__media"><img src="img/projects/swekly/2.png" alt="Swekly SaaS" loading="lazy" decoding="async" /></div>
-						<div class="project__overlay"></div>
-						<div class="project__body">
-							<span class="project__tag">Multi-tenant SaaS</span>
-							<h3 class="project__title">Swekly</h3>
-							<p class="project__desc">High-performance e-commerce ecosystem serving hundreds of clients in Algeria — Nuxt 3, Vue, Flutter, Express, PostgreSQL.</p>
-							<span class="project__cta">Explore <span class="arrow">→</span></span>
+						<div class="stats" style="margin-top: 36px;">
+							<div class="stat">
+								<div class="stat__num" data-value="20" data-suffix="+">0</div>
+								<div class="stat__label">Completed Projects</div>
+							</div>
+							<div class="stat">
+								<div class="stat__num" data-value="98" data-suffix="%">0</div>
+								<div class="stat__label">Client satisfaction</div>
+							</div>
+							<div class="stat">
+								<div class="stat__num" data-value="5" data-suffix="+">0</div>
+								<div class="stat__label">Years of experience</div>
+							</div>
 						</div>
-					</a>
-
-					<a class="project reveal" data-cat="mobile desktop" href="project/1/index.html" data-tilt="6">
-						<div class="project__media"><img src="img/projects/nexsync_pos/dashboard.jpg" alt="NexSync POS" loading="lazy" decoding="async" /></div>
-						<div class="project__overlay"></div>
-						<div class="project__body">
-							<span class="project__tag">Cross-platform POS</span>
-							<h3 class="project__title">NexSync POS</h3>
-							<p class="project__desc">Real-time sales and AI-assisted inventory forecasting across desktop and mobile — Flutter, Socket.io, TensorFlow.</p>
-							<span class="project__cta">Explore <span class="arrow">→</span></span>
-						</div>
-					</a>
-
-					<a class="project reveal" data-cat="web mobile" href="project/5/index.html" data-tilt="6">
-						<div class="project__media"><img src="img/projects/nokhba_store/home-screen.png" alt="Nokhba Store" loading="lazy" decoding="async" /></div>
-						<div class="project__overlay"></div>
-						<div class="project__body">
-							<span class="project__tag">Full-stack ecommerce</span>
-							<h3 class="project__title">Nokhba Store</h3>
-							<p class="project__desc">Multilingual storefront and admin suite — Vue 3, Vite, Supabase, RTL-ready Arabic UI, Maystro delivery.</p>
-							<span class="project__cta">Explore <span class="arrow">→</span></span>
-						</div>
-					</a>
-
-					<a class="project reveal" data-cat="mobile" href="project/2/index.html" data-tilt="6">
-						<div class="project__media"><img src="img/projects/matima_app/home-access.jpg" alt="Matima App" loading="lazy" decoding="async" /></div>
-						<div class="project__overlay"></div>
-						<div class="project__body">
-							<span class="project__tag">Accessibility</span>
-							<h3 class="project__title">Matima App</h3>
-							<p class="project__desc">Accessible smartphone experience for seniors with voice guidance and reminders — Flutter + TTS.</p>
-							<span class="project__cta">Explore <span class="arrow">→</span></span>
-						</div>
-					</a>
-
-					<a class="project reveal" data-cat="web" href="project/8/index.html" data-tilt="6">
-						<div class="project__media"><img src="img/projects/cablin/home.png" alt="Cablin" loading="lazy" decoding="async" /></div>
-						<div class="project__overlay"></div>
-						<div class="project__body">
-							<span class="project__tag">Industrial landing</span>
-							<h3 class="project__title">Cablin</h3>
-							<p class="project__desc">Marketing site for an Algerian low-voltage cable manufacturer — Nuxt SSR, Vue, Tailwind.</p>
-							<span class="project__cta">Explore <span class="arrow">→</span></span>
-						</div>
-					</a>
-
-					<a class="project reveal" data-cat="desktop" href="project/6/index.html" data-tilt="6">
-						<div class="project__media"><img src="img/projects/activity_manager/dashboard.jpg" alt="Excel Invoicing Tool" loading="lazy" decoding="async" /></div>
-						<div class="project__overlay"></div>
-						<div class="project__body">
-							<span class="project__tag">Desktop productivity</span>
-							<h3 class="project__title">Excel Invoicing Tool</h3>
-							<p class="project__desc">Transforms raw Excel timesheets into polished activity catalogs — Flutter desktop, DataTable2, SQLite.</p>
-							<span class="project__cta">Explore <span class="arrow">→</span></span>
-						</div>
-					</a>
-
+					</div>
 				</div>
 			</div>
 		</section>
@@ -248,8 +204,8 @@
 			<div class="container">
 				<div class="section__head reveal">
 					<div>
-						<span class="eyebrow">02 — Experience</span>
-						<h2 class="section__title">A <span class="display gradient-text">journey</span> through code</h2>
+						<span class="eyebrow">Experience</span>
+						<h2 class="section__title">A journey<br>through code<span class="dot-accent">.</span></h2>
 					</div>
 					<p class="section__lead">Five years across freelance lead developer, mobile applications engineer, and full-stack delivery for industry clients.</p>
 				</div>
@@ -259,31 +215,29 @@
 
 					<div class="timeline__item reveal">
 						<span class="dot"></span>
-						<div class="timeline__card" data-tilt="4">
+						<div class="timeline__card">
 							<div class="when">2023 — Present</div>
 							<h4>Lead Developer &amp; Founder</h4>
-							<div class="where">Freelance</div>
-							<p><strong>Swekly.com (E-commerce SaaS):</strong> Built and operate a multi-tenant SaaS serving hundreds of Algerian clients, with Nuxt 3 storefronts and a centralized admin.</p>
-							<p><strong>Cross-platform:</strong> Flutter for high-performance mobile and desktop applications.</p>
-							<p><strong>Lifecycle:</strong> Planning, testing, and deployment to Play Store and App Store.</p>
+							<div class="where">Freelance · Swekly</div>
+							<p><strong>SaaS:</strong> Built and operate a multi-tenant SaaS serving hundreds of Algerian clients with Nuxt 3 storefronts and a centralized admin.</p>
+							<p><strong>Cross-platform:</strong> Flutter for high-performance mobile and desktop apps.</p>
 						</div>
 					</div>
 
 					<div class="timeline__item reveal">
 						<span class="dot"></span>
-						<div class="timeline__card" data-tilt="4">
+						<div class="timeline__card">
 							<div class="when">May 2021 — April 2023</div>
 							<h4>Mobile Applications Developer</h4>
 							<div class="where">D-Soft Solutions · Béjaïa</div>
-							<p><strong>Product:</strong> Built multiple mobile and desktop POS applications using Flutter and Java.</p>
-							<p><strong>IoT:</strong> Created custom Arduino devices with proprietary PCB circuits and 3D-printed enclosures.</p>
-							<p><strong>Web:</strong> Full-stack e-commerce sites and supplier evaluation platforms.</p>
+							<p><strong>Product:</strong> Built mobile and desktop POS apps using Flutter and Java.</p>
+							<p><strong>IoT:</strong> Custom Arduino devices with proprietary PCB circuits and 3D-printed enclosures.</p>
 						</div>
 					</div>
 
 					<div class="timeline__item reveal">
 						<span class="dot"></span>
-						<div class="timeline__card" data-tilt="4">
+						<div class="timeline__card">
 							<div class="when">Jan — Jun 2019</div>
 							<h4>End-of-Degree Internship</h4>
 							<div class="where">Sonatrach Refinery · Algiers</div>
@@ -295,188 +249,162 @@
 				<div style="margin-top: 80px;" class="reveal">
 					<span class="eyebrow" style="margin-bottom: 24px; display: inline-flex;">Education</span>
 					<div class="edu-grid">
-						<div class="edu-card" data-tilt="5">
+						<div class="edu-card">
 							<div class="when">2015 — 2019</div>
 							<h4>Bachelor's Degree, Information Systems Engineering</h4>
 							<div class="where">Algiers University 1</div>
-							<p>Foundations across software engineering, data structures, and systems analysis. Graduation project focused on real-world performance tracking.</p>
+							<p>Foundations across software engineering, data structures, and systems analysis.</p>
 						</div>
-						<div class="edu-card" data-tilt="5">
+						<div class="edu-card">
 							<div class="when">2012 — 2015</div>
 							<h4>High School Diploma — Experimental Sciences</h4>
 							<div class="where">Ahmed Zabana High School</div>
-							<p>Applied sciences and mathematics — the groundwork for a technology-driven career path.</p>
+							<p>Applied sciences and mathematics — the groundwork for a technology-driven path.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SKILLS -->
-		<section class="section" id="skills">
+		<!-- PROJECTS -->
+		<section class="section" id="projects">
 			<div class="container">
-				<div class="section__head reveal">
+				<div class="section__head reveal" style="grid-template-columns: 1fr; text-align: center;">
 					<div>
-						<span class="eyebrow">03 — Capabilities</span>
-						<h2 class="section__title">What I bring to the <span class="display gradient-text">table</span></h2>
-					</div>
-					<p class="section__lead">End-to-end delivery across mobile, web, and connected devices — focused on dependable releases and user-centered interfaces.</p>
-				</div>
-
-				<div class="skills__top reveal">
-					<div class="dial" data-value="95">
-						<div class="dial__wrap">
-							<svg class="dial__svg" viewBox="0 0 140 140">
-								<circle class="dial__bg" cx="70" cy="70" r="60"></circle>
-								<circle class="dial__fg" cx="70" cy="70" r="60"></circle>
-							</svg>
-							<span class="dial__pct">0%</span>
-						</div>
-						<h5>Flutter &amp; Dart</h5>
-					</div>
-					<div class="dial" data-value="90">
-						<div class="dial__wrap">
-							<svg class="dial__svg" viewBox="0 0 140 140">
-								<circle class="dial__bg" cx="70" cy="70" r="60"></circle>
-								<circle class="dial__fg" cx="70" cy="70" r="60"></circle>
-							</svg>
-							<span class="dial__pct">0%</span>
-						</div>
-						<h5>Cross-platform</h5>
-					</div>
-					<div class="dial" data-value="85">
-						<div class="dial__wrap">
-							<svg class="dial__svg" viewBox="0 0 140 140">
-								<circle class="dial__bg" cx="70" cy="70" r="60"></circle>
-								<circle class="dial__fg" cx="70" cy="70" r="60"></circle>
-							</svg>
-							<span class="dial__pct">0%</span>
-						</div>
-						<h5>Backend &amp; Cloud</h5>
-					</div>
-					<div class="dial" data-value="80">
-						<div class="dial__wrap">
-							<svg class="dial__svg" viewBox="0 0 140 140">
-								<circle class="dial__bg" cx="70" cy="70" r="60"></circle>
-								<circle class="dial__fg" cx="70" cy="70" r="60"></circle>
-							</svg>
-							<span class="dial__pct">0%</span>
-						</div>
-						<h5>Web</h5>
-					</div>
-					<div class="dial" data-value="80">
-						<div class="dial__wrap">
-							<svg class="dial__svg" viewBox="0 0 140 140">
-								<circle class="dial__bg" cx="70" cy="70" r="60"></circle>
-								<circle class="dial__fg" cx="70" cy="70" r="60"></circle>
-							</svg>
-							<span class="dial__pct">0%</span>
-						</div>
-						<h5>UI/UX Design</h5>
+						<span class="eyebrow" style="justify-content: center;">Projects</span>
+						<h2 class="section__title" style="text-align: center;">Selected work<span class="dot-accent">.</span></h2>
+						<p class="section__lead" style="margin: 16px auto 0;">Recent builds blending thoughtful UX, resilient architecture and measurable outcomes.</p>
 					</div>
 				</div>
 
-				<div class="reveal">
-					<span class="eyebrow" style="margin-bottom: 24px; display: inline-flex;">Tech stack</span>
-					<div class="tech-grid">
-						<div class="tech-tile"><span class="iconify" data-icon="logos:flutter"></span><span class="name">Flutter</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:dart"></span><span class="name">Dart</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:vue"></span><span class="name">Vue</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:nuxt-icon"></span><span class="name">Nuxt</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:javascript"></span><span class="name">JavaScript</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:typescript-icon"></span><span class="name">TypeScript</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:nodejs-icon"></span><span class="name">Node</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:firebase"></span><span class="name">Firebase</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:supabase-icon"></span><span class="name">Supabase</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:postgresql"></span><span class="name">Postgres</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:mysql-icon"></span><span class="name">MySQL</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:python"></span><span class="name">Python</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:php"></span><span class="name">PHP</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:arduino"></span><span class="name">Arduino</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:figma"></span><span class="name">Figma</span></div>
-						<div class="tech-tile"><span class="iconify" data-icon="logos:git-icon"></span><span class="name">Git</span></div>
-					</div>
+				<div class="projects__filter reveal" style="margin-inline: auto;">
+					<button class="filter__btn is-active" data-filter="*">All</button>
+					<button class="filter__btn" data-filter="mobile">Mobile</button>
+					<button class="filter__btn" data-filter="web">Web</button>
+					<button class="filter__btn" data-filter="desktop">Desktop</button>
 				</div>
 
-				<div class="reveal" style="margin-top: 60px;">
-					<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;">
-						<div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev);">
-							<h5 style="margin-bottom: 8px;">Experience</h5>
-							<p style="color: var(--fg); font-weight: 500;">5+ years</p>
-						</div>
-						<div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev);">
-							<h5 style="margin-bottom: 8px;">Languages spoken</h5>
-							<p style="color: var(--fg); font-weight: 500;">French C2 · English C2 · Arabic · Spanish</p>
-						</div>
-						<div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev);">
-							<h5 style="margin-bottom: 8px;">Programming</h5>
-							<p style="color: var(--fg); font-weight: 500;">Dart · Java · C++ · Python · PHP · JavaScript</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+				<div class="projects__grid">
 
-		<!-- SERVICES -->
-		<section class="section" id="services">
-			<div class="container">
-				<div class="section__head reveal">
-					<div>
-						<span class="eyebrow">04 — Services</span>
-						<h2 class="section__title">How I can <span class="display gradient-text">help</span></h2>
-					</div>
-					<p class="section__lead">From discovery to deployment, I translate requirements into secure, scalable apps that feel native on every platform.</p>
-				</div>
-
-				<div class="bento reveal">
-					<div class="bento__cell bento__cell--lg" data-tilt="3">
-						<div>
-							<span class="eyebrow">Core offering</span>
-							<h4>Cross-Platform App Development</h4>
-							<p>Architect and ship performant Flutter applications that share code across mobile, desktop, and web — without sacrificing user experience.</p>
+					<div class="project-row reveal" data-cat="web mobile desktop">
+						<div class="project-row__text">
+							<h4>Swekly SaaS</h4>
+							<div class="project-row__tags">
+								<span class="project-row__tag">Nuxt 3</span>
+								<span class="project-row__tag">Vue</span>
+								<span class="project-row__tag">Flutter</span>
+								<span class="project-row__tag">Express</span>
+								<span class="project-row__tag">PostgreSQL</span>
+							</div>
+							<p class="project-row__desc">High-performance, multi-tenant e-commerce platform serving hundreds of clients in the Algerian market — desktop, iOS, Android &amp; web with localized delivery and COD workflows.</p>
+							<div class="project-row__cta">
+								<a href="project/7/index.html" class="btn btn--primary btn--sm">View project</a>
+								<a href="project/7/index.html" class="btn--link">Case study <span class="arrow">↗</span></a>
+							</div>
 						</div>
-						<div class="stack"><span class="iconify" data-icon="logos:flutter"></span><span class="iconify" data-icon="logos:dart"></span>Flutter · Dart</div>
+						<a href="project/7/index.html" class="project-row__media">
+							<img src="img/projects/swekly/2.png" alt="Swekly SaaS" loading="lazy" decoding="async" />
+						</a>
 					</div>
 
-					<div class="bento__cell bento__cell--md" data-tilt="3">
-						<div>
-							<h4>Mobile UI/UX Design</h4>
-							<p>Intuitive user journeys, prototypes, and responsive design systems balancing accessibility with brand identity.</p>
+					<div class="project-row reveal" data-cat="mobile desktop">
+						<div class="project-row__text">
+							<h4>NexSync POS</h4>
+							<div class="project-row__tags">
+								<span class="project-row__tag">Flutter</span>
+								<span class="project-row__tag">Socket.io</span>
+								<span class="project-row__tag">SQLite</span>
+								<span class="project-row__tag">TensorFlow</span>
+							</div>
+							<p class="project-row__desc">Real-time sales and AI-assisted inventory forecasting across desktop and mobile — keeps teams aligned no matter the device.</p>
+							<div class="project-row__cta">
+								<a href="project/1/index.html" class="btn btn--primary btn--sm">View project</a>
+								<a href="project/1/index.html" class="btn--link">Case study <span class="arrow">↗</span></a>
+							</div>
 						</div>
-						<div class="stack"><span class="iconify" data-icon="logos:figma"></span>Figma</div>
+						<a href="project/1/index.html" class="project-row__media">
+							<img src="img/projects/nexsync_pos/dashboard.jpg" alt="NexSync POS" loading="lazy" decoding="async" />
+						</a>
 					</div>
 
-					<div class="bento__cell bento__cell--md" data-tilt="3">
-						<div>
-							<h4>IoT &amp; Hardware</h4>
-							<p>Connected solutions blending mobile apps with Bluetooth, custom PCBs, and 3D-printed hardware for real-world automation.</p>
+					<div class="project-row reveal" data-cat="web mobile">
+						<div class="project-row__text">
+							<h4>Nokhba Store</h4>
+							<div class="project-row__tags">
+								<span class="project-row__tag">Vue 3</span>
+								<span class="project-row__tag">Vite</span>
+								<span class="project-row__tag">Supabase</span>
+								<span class="project-row__tag">RTL</span>
+							</div>
+							<p class="project-row__desc">Multilingual storefront and admin suite powering a full retail workflow — loyalty, referrals, Maystro delivery, and Arabic RTL.</p>
+							<div class="project-row__cta">
+								<a href="project/5/index.html" class="btn btn--primary btn--sm">View project</a>
+								<a href="project/5/index.html" class="btn--link">Case study <span class="arrow">↗</span></a>
+							</div>
 						</div>
-						<div class="stack"><span class="iconify" data-icon="logos:arduino"></span>Arduino · BLE</div>
+						<a href="project/5/index.html" class="project-row__media">
+							<img src="img/projects/nokhba_store/home-screen.png" alt="Nokhba Store" loading="lazy" decoding="async" />
+						</a>
 					</div>
 
-					<div class="bento__cell bento__cell--md" data-tilt="3">
-						<div>
-							<h4>Product Lifecycle</h4>
-							<p>Plan releases, orchestrate sprints, integrate analytics, and handle CI/CD pipelines through launch and maintenance.</p>
+					<div class="project-row reveal" data-cat="mobile">
+						<div class="project-row__text">
+							<h4>Matima App</h4>
+							<div class="project-row__tags">
+								<span class="project-row__tag">Flutter</span>
+								<span class="project-row__tag">Provider</span>
+								<span class="project-row__tag">TTS</span>
+							</div>
+							<p class="project-row__desc">Accessible smartphone experience for seniors with voice guidance and reminders — clarity and independence for users and caregivers.</p>
+							<div class="project-row__cta">
+								<a href="project/2/index.html" class="btn btn--primary btn--sm">View project</a>
+								<a href="project/2/index.html" class="btn--link">Case study <span class="arrow">↗</span></a>
+							</div>
 						</div>
-						<div class="stack"><span class="iconify" data-icon="mdi:rocket-launch" style="color: var(--accent-3);"></span>Plan → Ship</div>
+						<a href="project/2/index.html" class="project-row__media">
+							<img src="img/projects/matima_app/home-access.jpg" alt="Matima App" loading="lazy" decoding="async" />
+						</a>
 					</div>
 
-					<div class="bento__cell bento__cell--sm" data-tilt="3">
-						<div>
-							<h4>Full-Stack Web</h4>
-							<p>Vue 3, Nuxt, and Express — fast, accessible, and SEO-ready.</p>
+					<div class="project-row reveal" data-cat="web">
+						<div class="project-row__text">
+							<h4>Cablin</h4>
+							<div class="project-row__tags">
+								<span class="project-row__tag">Nuxt</span>
+								<span class="project-row__tag">Vue</span>
+								<span class="project-row__tag">Tailwind</span>
+								<span class="project-row__tag">SSR</span>
+							</div>
+							<p class="project-row__desc">Marketing site for an Algerian low-voltage cable manufacturer — fast, crawlable and easy to maintain.</p>
+							<div class="project-row__cta">
+								<a href="project/8/index.html" class="btn btn--primary btn--sm">View project</a>
+								<a href="project/8/index.html" class="btn--link">Case study <span class="arrow">↗</span></a>
+							</div>
 						</div>
-						<div class="stack"><span class="iconify" data-icon="logos:vue"></span>Vue · Nuxt</div>
+						<a href="project/8/index.html" class="project-row__media">
+							<img src="img/projects/cablin/home.png" alt="Cablin" loading="lazy" decoding="async" />
+						</a>
 					</div>
 
-					<div class="bento__cell bento__cell--sm" data-tilt="3">
-						<div>
-							<h4>Backend &amp; Cloud</h4>
-							<p>Firebase, Supabase, PostgreSQL — auth, realtime, storage, deploy.</p>
+					<div class="project-row reveal" data-cat="desktop">
+						<div class="project-row__text">
+							<h4>Excel Invoicing Tool</h4>
+							<div class="project-row__tags">
+								<span class="project-row__tag">Flutter Desktop</span>
+								<span class="project-row__tag">DataTable2</span>
+								<span class="project-row__tag">SQLite</span>
+							</div>
+							<p class="project-row__desc">Transforms raw Excel timesheets into polished activity catalogs in minutes — tutorial coach marks, dashboards, and persistent storage.</p>
+							<div class="project-row__cta">
+								<a href="project/6/index.html" class="btn btn--primary btn--sm">View project</a>
+								<a href="project/6/index.html" class="btn--link">Case study <span class="arrow">↗</span></a>
+							</div>
 						</div>
-						<div class="stack"><span class="iconify" data-icon="logos:supabase-icon"></span>Supabase · Firebase</div>
+						<a href="project/6/index.html" class="project-row__media">
+							<img src="img/projects/activity_manager/dashboard.jpg" alt="Excel Invoicing Tool" loading="lazy" decoding="async" />
+						</a>
 					</div>
+
 				</div>
 			</div>
 		</section>
@@ -486,24 +414,24 @@
 			<div class="container">
 				<div class="section__head reveal">
 					<div>
-						<span class="eyebrow">05 — Words</span>
-						<h2 class="section__title">Kind <span class="display gradient-text">testimonials</span></h2>
+						<span class="eyebrow">Testimonials</span>
+						<h2 class="section__title">Kind words<span class="dot-accent">.</span></h2>
 					</div>
-					<p class="section__lead">Feedback from teammates, collaborators, and mentors who have seen my work across mobile, IoT, and academic projects.</p>
+					<p class="section__lead">Feedback from teammates, collaborators, and mentors.</p>
 				</div>
 
 				<div class="testimonials">
-					<div class="testimonial reveal" data-tilt="4">
+					<div class="testimonial reveal">
 						<p class="testimonial__quote">Yazid can turn a concept into a polished interface faster than anyone I know. He adapted every design iteration I threw at him and improved the UX with thoughtful details.</p>
 						<div class="testimonial__author">
 							<span class="testimonial__avatar">NT</span>
 							<div>
 								<div class="testimonial__name">Nassim Tebbani</div>
-								<div class="testimonial__role">Product Designer &amp; collaborator</div>
+								<div class="testimonial__role">Product Designer</div>
 							</div>
 						</div>
 					</div>
-					<div class="testimonial reveal" data-tilt="4">
+					<div class="testimonial reveal">
 						<p class="testimonial__quote">Working with Yazid on a maps web app showed me how well he blends technical rigor. He keeps delivery on track while staying open to new ideas.</p>
 						<div class="testimonial__author">
 							<span class="testimonial__avatar">RB</span>
@@ -513,23 +441,23 @@
 							</div>
 						</div>
 					</div>
-					<div class="testimonial reveal" data-tilt="4">
+					<div class="testimonial reveal">
 						<p class="testimonial__quote">As his instructor for three years, I witnessed Yazid's growth into a reliable engineer. His final-year project reflected excellent research discipline and execution.</p>
 						<div class="testimonial__author">
 							<span class="testimonial__avatar">RA</span>
 							<div>
 								<div class="testimonial__name">Rahmani Amine</div>
-								<div class="testimonial__role">Teacher Researcher, University of Algiers 1</div>
+								<div class="testimonial__role">Teacher Researcher</div>
 							</div>
 						</div>
 					</div>
-					<div class="testimonial reveal" data-tilt="4">
+					<div class="testimonial reveal">
 						<p class="testimonial__quote">Yazid brings curiosity and professionalism to every assignment. His capacity to link theoretical knowledge with real-world prototypes is remarkable.</p>
 						<div class="testimonial__author">
 							<span class="testimonial__avatar">AA</span>
 							<div>
 								<div class="testimonial__name">Amine Mohamed Adouane</div>
-								<div class="testimonial__role">Teacher Researcher, University of Algiers 1</div>
+								<div class="testimonial__role">Teacher Researcher</div>
 							</div>
 						</div>
 					</div>
@@ -540,16 +468,11 @@
 		<!-- CONTACT -->
 		<section class="section" id="contact">
 			<div class="container">
-				<div class="section__head reveal">
-					<div>
-						<span class="eyebrow">06 — Contact</span>
-						<h2 class="section__title">Let's build <span class="display gradient-text">something</span></h2>
-					</div>
-					<p class="section__lead">Share the idea you're working on and I'll get back within one business day.</p>
-				</div>
-
 				<div class="contact__grid">
 					<div class="contact__pitch reveal">
+						<span class="eyebrow" style="margin-bottom: 18px;">Contact</span>
+						<h2>Have a project?<br>Let's <span class="dot-accent">talk!</span></h2>
+						<p>Share the idea you're working on and I'll get back within one business day.</p>
 						<div class="contact__info">
 							<a href="mailto:yazidaitallala@hotmail.com" class="contact__info-item">
 								<span class="iconify" data-icon="mdi:email-outline"></span>
@@ -559,37 +482,35 @@
 								<span class="iconify" data-icon="mdi:phone"></span>
 								<span>+213 540 80 14 36</span>
 							</a>
-							<div class="contact__info-item">
-								<span class="iconify" data-icon="mdi:map-marker"></span>
-								<span>Algiers, Algeria</span>
-							</div>
 							<a href="https://wa.me/+213540801436" target="_blank" rel="noopener" class="contact__info-item">
 								<span class="iconify" data-icon="mdi:whatsapp"></span>
 								<span>WhatsApp · +213 540 80 14 36</span>
 							</a>
+							<div class="contact__info-item">
+								<span class="iconify" data-icon="mdi:map-marker"></span>
+								<span>Algiers, Algeria</span>
+							</div>
 						</div>
 					</div>
 
 					<form class="contact__form reveal" autocomplete="off">
-						<div class="field--row">
-							<div class="field">
-								<input id="c-name" type="text" name="name" placeholder=" " required />
-								<label for="c-name">Your name</label>
-							</div>
-							<div class="field">
-								<input id="c-email" type="email" name="email" placeholder=" " required />
-								<label for="c-email">Email</label>
-							</div>
+						<div class="field-line">
+							<input id="c-name" type="text" name="name" placeholder=" " required />
+							<label for="c-name">Name</label>
 						</div>
-						<div class="field">
+						<div class="field-line">
+							<input id="c-email" type="email" name="email" placeholder=" " required />
+							<label for="c-email">Email</label>
+						</div>
+						<div class="field-line">
 							<input id="c-subject" type="text" name="subject" placeholder=" " required />
 							<label for="c-subject">Subject</label>
 						</div>
-						<div class="field">
+						<div class="field-line">
 							<textarea id="c-message" name="message" placeholder=" " required></textarea>
-							<label for="c-message">Tell me about your project</label>
+							<label for="c-message">Message</label>
 						</div>
-						<button class="submit" type="submit"><span>Send message</span></button>
+						<button class="submit" type="submit"><span>Submit</span></button>
 						<p class="form__notice" role="status" aria-live="polite"></p>
 					</form>
 				</div>
@@ -600,37 +521,28 @@
 
 	<!-- FOOTER -->
 	<footer class="footer">
-		<div class="container">
-			<div class="footer__grid">
-				<div class="footer__big">Yazid.</div>
-				<ul class="footer__socials">
-					<li><a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="iconify" data-icon="mdi:linkedin"></span></a></li>
-					<li><a href="https://github.com/Lyazz" target="_blank" rel="noopener" aria-label="GitHub"><span class="iconify" data-icon="mdi:github"></span></a></li>
-					<li><a href="https://www.instagram.com/lyazzid/" target="_blank" rel="noopener" aria-label="Instagram"><span class="iconify" data-icon="mdi:instagram"></span></a></li>
-					<li><a href="https://wa.me/+213540801436" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="iconify" data-icon="mdi:whatsapp"></span></a></li>
-				</ul>
-				<div style="text-align: right;">
-					<a href="#hero" class="footer__top">↑ Back to top</a>
-				</div>
-			</div>
-			<div class="footer__bottom">
-				<p>© <span class="footer__year">2026</span> Yazid AITALLALA. Crafted with care in Algiers.</p>
-				<p>Last updated April 2026</p>
-			</div>
+		<div class="container footer__inner">
+			<div class="footer__name">Yazid AITALLALA<span class="dot-accent">.</span></div>
+			<ul class="footer__socials">
+				<li><a href="https://www.linkedin.com/in/lyazz00/" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="iconify" data-icon="mdi:linkedin"></span></a></li>
+				<li><a href="https://github.com/Lyazz" target="_blank" rel="noopener" aria-label="GitHub"><span class="iconify" data-icon="mdi:github"></span></a></li>
+				<li><a href="mailto:yazidaitallala@hotmail.com" aria-label="Email"><span class="iconify" data-icon="mdi:email"></span></a></li>
+				<li><a href="https://www.instagram.com/lyazzid/" target="_blank" rel="noopener" aria-label="Instagram"><span class="iconify" data-icon="mdi:instagram"></span></a></li>
+			</ul>
+			<p class="footer__copy">© <span class="footer__year">2026</span> Yazid AITALLALA. Designed &amp; built with care in Algiers.</p>
 		</div>
 	</footer>
 
-	<!-- Floating actions -->
+	<!-- Floating WhatsApp -->
 	<div class="float-actions" role="group" aria-label="Quick actions">
-		<a class="whatsapp" href="https://wa.me/+213540801436" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+		<a href="https://wa.me/+213540801436" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
 			<span class="iconify" data-icon="mdi:whatsapp"></span>
 		</a>
 	</div>
 
 	<!-- Scripts -->
 	<script src="js/iconify.min.js"></script>
-	<script src="js/cursor.js?ver=2026"></script>
-	<script src="js/tilt.js?ver=2026"></script>
-	<script src="js/animations.js?ver=2026"></script>
+	<script src="js/cursor.js?ver=2026b"></script>
+	<script src="js/animations.js?ver=2026b"></script>
 </body>
 </html>
